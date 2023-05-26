@@ -1,0 +1,13 @@
+{
+  "appName": "consul",
+  "userGivenName": "consul",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "helm.releases.hashicorp.com",
+  "srcRepoURL": "https://.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null,
+  "exclude": "",
+  "include": ""
+}
