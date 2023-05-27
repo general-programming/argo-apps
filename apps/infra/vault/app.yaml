@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vault
+  labels:
+    kubernetes.io/metadata.name: vault
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/enforce-version: latest
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-helm
+  namespace: argocd
+spec:
+  destination:
+    namespace: vault
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: vault
+    helm:
+     valueFiles: 
+      - values.yaml
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.24.1
+  syncPolicy:
+    automated:
+      prune: true
