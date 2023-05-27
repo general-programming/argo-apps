@@ -1,9 +1,7 @@
 global:
+  enabled: false
   tlsDisable: false
   externalVaultAddr: 'https://10.65.67.27:8200'
 
 injector:
   enabled: true
-
-server:
-  enabled: false
