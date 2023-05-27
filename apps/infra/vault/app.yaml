@@ -24,7 +24,10 @@ spec:
         global:
           enabled: false
           tlsDisable: false
-          externalVaultAddr: 'https://10.65.67.27:8200'
+          externalVaultAddr: 'https://vault-proxy.catgirls.dev:8200'
+
+        csi:
+          enabled: true
 
         injector:
           enabled: true
