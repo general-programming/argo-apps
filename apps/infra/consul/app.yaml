@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: consul
+  labels:
+    kubernetes.io/metadata.name: consul
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/enforce-version: latest
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: consul
+  namespace: argocd
+spec:
+  destination:
+    namespace: consul
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: consul
+    helm:
+      values: |-
+        global:
+          name: fmt2
+          datacenter: fmt2
+        connectInject:
+          enabled: false
+        client:
+          enabled: false
+          exposeGossipPorts: false
+        server:
+          replicas: 5
+          exposeGossipAndRPCPorts: true
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 1.1.1
+  syncPolicy:
+    automated:
+      prune: true
