@@ -37,6 +37,7 @@ spec:
   - git:
       files:
       - path: apps/**/infra/config.json
+      - path: apps/**/infra/config.yaml
       repoURL: https://github.com/general-programming/argo-fmt2.git
       requeueAfterSeconds: 20
       revision: ""
