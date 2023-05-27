@@ -12,7 +12,7 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: default project
+  description: default project, do not delete
   destinations:
   - namespace: '*'
     server: '*'
