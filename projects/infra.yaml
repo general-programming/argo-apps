@@ -40,7 +40,7 @@ spec:
       directories:
       - path: apps/infra/*
   syncPolicy: {}
-    template:
+  template:
     metadata:
       name: '{{path.basename}}'
     spec:
