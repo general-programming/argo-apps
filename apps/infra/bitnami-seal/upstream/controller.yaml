@@ -1,65 +1,20 @@
 ---
-apiVersion: v1
-kind: Service
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
 metadata:
   annotations: {}
   labels:
     name: sealed-secrets-controller
   name: sealed-secrets-controller
   namespace: kube-system
-spec:
-  ports:
-  - port: 8080
-    targetPort: 8080
-  selector:
-    name: sealed-secrets-controller
-  type: ClusterIP
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  annotations: {}
-  labels:
-    name: sealed-secrets-service-proxier
-  name: sealed-secrets-service-proxier
-  namespace: kube-system
-rules:
-- apiGroups:
-  - ""
-  resourceNames:
-  - sealed-secrets-controller
-  resources:
-  - services
-  verbs:
-  - get
-- apiGroups:
-  - ""
-  resourceNames:
-  - 'http:sealed-secrets-controller:'
-  - http:sealed-secrets-controller:http
-  - sealed-secrets-controller
-  resources:
-  - services/proxy
-  verbs:
-  - create
-  - get
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  annotations: {}
-  labels:
-    name: sealed-secrets-key-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
   name: sealed-secrets-key-admin
+subjects:
+- kind: ServiceAccount
+  name: sealed-secrets-controller
   namespace: kube-system
-rules:
-- apiGroups:
-  - ""
-  resources:
-  - secrets
-  verbs:
-  - create
-  - list
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -107,6 +62,23 @@ rules:
   - namespaces
   verbs:
   - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations: {}
+  labels:
+    name: sealed-secrets-key-admin
+  name: sealed-secrets-key-admin
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - list
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -164,7 +136,7 @@ spec:
         command:
         - controller
         env: []
-        image: docker.io/bitnami/sealed-secrets-controller:v0.21.0
+        image: docker.io/bitnami/sealed-secrets-controller:v0.23.0
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -336,6 +308,22 @@ spec:
     subresources:
       status: {}
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    name: sealed-secrets-controller
+  name: sealed-secrets-controller
+  namespace: kube-system
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    name: sealed-secrets-controller
+  type: ClusterIP
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -354,18 +342,30 @@ subjects:
   name: system:authenticated
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: Role
 metadata:
   annotations: {}
   labels:
-    name: sealed-secrets-controller
-  name: sealed-secrets-controller
+    name: sealed-secrets-service-proxier
+  name: sealed-secrets-service-proxier
   namespace: kube-system
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: sealed-secrets-key-admin
-subjects:
-- kind: ServiceAccount
-  name: sealed-secrets-controller
-  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - sealed-secrets-controller
+  resources:
+  - services
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resourceNames:
+  - 'http:sealed-secrets-controller:'
+  - http:sealed-secrets-controller:http
+  - sealed-secrets-controller
+  resources:
+  - services/proxy
+  verbs:
+  - create
+  - get
