@@ -12,3 +12,8 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ceph
+  ignoreDifferences:
+    - group: "*"
+      kind: "*"
+      managedFieldsManagers:
+      - rook
