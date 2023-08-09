@@ -5,4 +5,4 @@ resources:
   - ceph_configmap.yaml
   - ceph_secret.yaml
   - ceph_external.yaml
-  - ceph_secret.yaml
+  - ceph_storageclass.yaml
