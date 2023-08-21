@@ -1,0 +1,18 @@
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: fmt2-bgp
+  namespace: metallb-system
+spec:
+  myASN: 4280805526
+  peerASN: 4280805526
+  peerAddress: 10.65.67.34
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: fmt2-advertisement
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - fmt2-pool
