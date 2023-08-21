@@ -1,0 +1,63 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  annotations:
+    argocd-autopilot.argoproj-labs.io/default-dest-server: https://kubernetes.default.svc
+    argocd.argoproj.io/sync-options: PruneLast=true
+    argocd.argoproj.io/sync-wave: "-2"
+  creationTimestamp: null
+  name: test
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  description: test project
+  destinations:
+  - namespace: '*'
+    server: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  sourceRepos:
+  - '*'
+status: {}
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  creationTimestamp: null
+  name: test
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/general-programming/argo-fmt2.git
+      revision: HEAD
+      directories:
+      - path: apps/test/*
+  syncPolicy: {}
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: "test"
+      source:
+        repoURL: https://github.com/general-programming/argo-fmt2.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+      ignoreDifferences:
+      - group: argoproj.io
+        jsonPointers:
+        - /status
+        kind: Application
+status: {}
