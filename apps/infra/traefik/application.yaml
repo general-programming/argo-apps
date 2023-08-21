@@ -22,7 +22,7 @@ spec:
           websecure:
             hostPort: 443
     repoURL: https://traefik.github.io/charts
-    targetRevision: 24.0.0
+    targetRevision: v24.0.0
   syncPolicy:
     automated:
       prune: true
