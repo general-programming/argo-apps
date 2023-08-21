@@ -13,6 +13,3 @@ kind: BGPAdvertisement
 metadata:
   name: fmt2-advertisement
   namespace: metallb-system
-spec:
-  ipAddressPools:
-  - fmt2-pool
