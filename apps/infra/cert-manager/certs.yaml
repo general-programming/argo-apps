@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: crt-genprog
+spec:
+  secretName: tls-secret
+  issuerRef: 
+    kind: Issuer
+    name: letsencrypt-prod
+  dnsNames:
+    - "generalprogramming.org"
+    - "*.generalprogramming.org"
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: crt-catgirls
+spec:
+  secretName: tls-secret
+  issuerRef: 
+    kind: Issuer
+    name: letsencrypt-prod
+  dnsNames:
+    - "catgirls.dev"
+    - "*.catgirls.dev"

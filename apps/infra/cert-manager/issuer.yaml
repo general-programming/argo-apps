@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token-secret
+type: Opaque
+stringData:
+  api-token: 1M50DLxusUFeuDlRCcO1_Y35M3Fyp3iRAEKxy76v
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-genprog
+spec:
+  acme:
+    email: support@generalprogramming.org
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - selector:
+        dnsZones:
+          - "generalprogramming.org"
+          - "catgirls.dev"
+      dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
