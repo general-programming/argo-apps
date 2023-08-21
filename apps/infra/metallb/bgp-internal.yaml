@@ -1,3 +1,12 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: fmt2-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.3.4.0/23
+---
 apiVersion: metallb.io/v1beta2
 kind: BGPPeer
 metadata:
@@ -25,3 +34,8 @@ metadata:
   namespace: metallb-system
 spec:
   aggregationLength: 24
+  peers:
+    - fmt2-bgp-leaf1
+    - fmt2-bgp-leaf2
+  ipAddressPools:
+    - fmt2-pool
