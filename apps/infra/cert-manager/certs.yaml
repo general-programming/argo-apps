@@ -6,7 +6,7 @@ spec:
   secretName: tls-secret
   issuerRef: 
     kind: Issuer
-    name: letsencrypt-prod
+    name: letsencrypt-genprog
   dnsNames:
     - "generalprogramming.org"
     - "*.generalprogramming.org"
@@ -19,7 +19,7 @@ spec:
   secretName: tls-secret
   issuerRef: 
     kind: Issuer
-    name: letsencrypt-prod
+    name: letsencrypt-genprog
   dnsNames:
     - "catgirls.dev"
     - "*.catgirls.dev"
