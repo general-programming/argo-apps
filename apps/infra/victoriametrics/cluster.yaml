@@ -25,8 +25,8 @@ spec:
     cacheMountPath: "/select-cache"
     storage:
       volumeClaimTemplate:
-        storageClassName: ceph-rbd
         spec:
+          storageClassName: ceph-rbd
           resources:
             requests:
               storage: 2Gi
