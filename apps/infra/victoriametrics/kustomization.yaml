@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - github.com/VictoriaMetrics/operator/config/default?ref=v0.35.1
   - cluster.yaml
+  - vmagent.yaml
 
 images:
 - name: victoriametrics/operator
