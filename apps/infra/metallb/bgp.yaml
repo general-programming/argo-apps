@@ -23,3 +23,5 @@ kind: BGPAdvertisement
 metadata:
   name: fmt2-advertisement
   namespace: metallb-system
+spec:
+  aggregationLength: 24
