@@ -1,4 +1,4 @@
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: crt-genprog
@@ -11,7 +11,7 @@ spec:
     - "generalprogramming.org"
     - "*.generalprogramming.org"
 ---
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: crt-catgirls
