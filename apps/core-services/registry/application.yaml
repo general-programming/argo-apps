@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zot-registry
+  namespace: argocd
+spec:
+  destination:
+    namespace: zot-registry
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: zot
+    helm:
+      values: |-
+        service:
+          type: LoadBalancer
+    repoURL: http://zotregistry.io/helm-charts
+    targetRevision: v24.0.0
+  syncPolicy:
+    automated:
+      prune: true
