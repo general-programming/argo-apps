@@ -1,0 +1,37 @@
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: znc
+  serviceName: "znc"
+  replicas: 1
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: znc
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: znc
+        image: znc:1.8.2
+        ports:
+        - containerPort: 6667
+          name: irc
+        - containerPort: 6697
+          name: ircs
+        volumeMounts:
+        - name: znc-data
+          mountPath: /znc-data
+  volumeClaimTemplates:
+  - metadata:
+      name: znc-data
+    spec:
+      storageClassName: cephfs
+      resources:
+        requests:
+          storage: 16Gi

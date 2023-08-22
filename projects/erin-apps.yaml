@@ -12,7 +12,7 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: erin-apps project
+  description: erin's shit
   destinations:
   - namespace: '*'
     server: '*'
@@ -28,68 +28,36 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "1"
   creationTimestamp: null
   name: erin-apps
   namespace: argocd
 spec:
   generators:
   - git:
-      files:
-      - path: apps/**/erin-apps/config.json
       repoURL: https://github.com/general-programming/argo-fmt2.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            repoURL: ""
-  - git:
-      files:
-      - path: apps/**/erin-apps/config_dir.json
-      repoURL: https://github.com/general-programming/argo-fmt2.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
+      revision: HEAD
+      directories:
+      - path: apps/erin-apps/*
   syncPolicy: {}
   template:
     metadata:
-      labels:
-        app.kubernetes.io/managed-by: argocd-autopilot
-        app.kubernetes.io/name: '{{ appName }}'
-      name: erin-apps-{{ userGivenName }}
-      namespace: argocd
+      name: '{{path.basename}}'
     spec:
+      project: "erin-apps"
+      source:
+        repoURL: https://github.com/general-programming/argo-fmt2.git
+        targetRevision: HEAD
+        path: '{{path}}'
       destination:
-        namespace: '{{ destNamespace }}'
-        server: '{{ destServer }}'
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:
         - /status
         kind: Application
-      project: erin-apps
-      source:
-        path: '{{ srcPath }}'
-        repoURL: '{{ srcRepoURL }}'
-        targetRevision: '{{ srcTargetRevision }}'
-      syncPolicy:
-        automated:
-          allowEmpty: true
-          prune: true
-          selfHeal: true
 status: {}
