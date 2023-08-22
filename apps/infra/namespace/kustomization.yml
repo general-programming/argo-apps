@@ -4,3 +4,6 @@ resources:
   - ceph.yaml
   - loki.yaml
   - traefik.yaml
+  - consul.yaml
+  - vault.yaml
+  - registry.yaml

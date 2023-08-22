@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    name: loki
+  name: loki
+spec:
+  minReadySeconds: 30
+  replicas: 6
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      name: loki
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations: {}
+      labels:
+        name: loki
+    spec:
+      containers:
+      - args: []
+        command:
+        - --config.file=/etc/loki/config.yaml
+        env: []
+        image: grafana/loki:2.8.1
+        imagePullPolicy: IfNotPresent
+        name: loki
+        ports:
+        - containerPort: 3100
+          name: http
+        - containerPort: 9095
+          name: grpc
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: tmp

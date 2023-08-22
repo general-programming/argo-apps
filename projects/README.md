@@ -1,21 +1,11 @@
-# Projects
-This directory contains all of your `argocd-autopilot` projects. Projects provide a way to logically group applications and easily control things such as defaults and restrictions.
+# fmt2-argocd
+This repo stores all the Argo configuration files for our FMT2 Kubernetes cluster.
 
-### Creating a new project
-To create a new project run:
-```bash
-export GIT_TOKEN=<YOUR_TOKEN>
-export GIT_REPO=<REPO_URL>
+## Accessing ArgoCD
+https://10.3.4.1 is the LoadBalancer IP for Argo.
 
-argocd-autopilot project create <PROJECT_NAME>
-```
+TODO: Make this a Traefik endpoint
+TODO: Add real authenication too.
 
-### Creating a new project on different cluster
-You can create a project that deploys applications to a different cluster, instead of the cluster where Argo-CD is installed. To do that run:
-```bash
-export GIT_TOKEN=<YOUR_TOKEN>
-export GIT_REPO=<REPO_URL>
-
-argocd-autopilot project create <PROJECT_NAME> --dest-kube-context <CONTEXT_NAME>
-```
-Now all applications in this project that do not explicitly specify a different `--dest-server` will be created on the project's destination server.
+## Adding a namespace
+Namespaces should be added in apps/infra/namespaces in order to keep track of all the namespaces that is sprayed in our cluster.

@@ -1,0 +1,83 @@
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+  grpc_listen_port: 9095
+
+common:
+  path_prefix: /local-data
+  storage:
+    s3:
+      endpoint: http://10.65.67.100
+      bucketnames: loki
+      s3forcepathstyle: true
+      access_key_id: K307MTDP4QHFW0QW6TO8
+      secret_access_key: yhlSevhrmjAW7pEJs1KqLVK2SNC3qfaW6XpyJizy
+    # filesystem:
+    #   chunks_directory: /data/chunks
+    #   rules_directory: /data/rules
+  replication_factor: 3
+  ring:
+    instance_interface_names:
+      - ens18
+      - internal
+    kvstore:
+      store: consul
+      consul:
+        host: localhost:8500
+    heartbeat_timeout: 1m
+
+storage_config:
+  boltdb_shipper:
+    active_index_directory: /local-data/index
+    shared_store: s3
+    cache_location: /local-data/boltdb-cache
+  tsdb_shipper:
+    active_index_directory: /local-data/tsdb-index
+    cache_location: /local-data/tsdb-cache
+    shared_store: s3
+
+schema_config:
+  configs:
+    - from: 2020-10-24
+      store: boltdb-shipper
+      object_store: aws
+      schema: v11
+      index:
+        prefix: loki_
+        period: 24h
+    # New TSDB https://grafana.com/docs/loki/latest/operations/storage/tsdb/?pg=blog&plcmt=body-txt
+    - from: "2023-04-21" # <---- A date in the future
+      index:
+        period: 24h
+        prefix: index_
+      object_store: aws
+      schema: v12
+      store: tsdb
+# query_range:
+#   results_cache:
+#     cache:
+#       enable_fifocache: true
+#       fifocache:
+#         max_size_bytes: 2GB
+
+limits_config:
+  reject_old_samples: false
+  ingestion_rate_mb: 12
+  ingestion_burst_size_mb: 48
+
+compactor:
+  working_directory: /local-data/compactor
+  shared_store: s3
+
+query_scheduler:
+  # the TSDB index dispatches many more, but each individually smaller, requests.
+  # We increase the pending request queue sizes to compensate.
+  max_outstanding_requests_per_tenant: 32768
+
+querier:
+  # Each `querier` component process runs a number of parallel workers to process queries simultaneously.
+  # You may want to adjust this up or down depending on your resource usage
+  # (more available cpu and memory can tolerate higher values and vice versa),
+  # but we find the most success running at around `16` with tsdb
+  max_concurrent: 16
