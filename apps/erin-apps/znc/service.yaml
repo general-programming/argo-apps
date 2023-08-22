@@ -6,8 +6,10 @@ spec:
   ports:
   - port: 6667
     targetPort: 6667
+    name: irc
   - port: 6697
     targetPort: 6697
+    name: ircs
   selector:
     app: znc
   type: LoadBalancer
@@ -23,6 +25,7 @@ spec:
   ports:
   - port: 16969
     targetPort: 6697
+    name: ircs
   selector:
     app: znc
   type: LoadBalancer
