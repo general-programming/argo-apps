@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: tls-generalprogramming
   issuerRef: 
-    kind: Issuer
+    kind: ClusterIssuer
     name: letsencrypt-genprog
   dnsNames:
     - "generalprogramming.org"
@@ -18,7 +18,7 @@ metadata:
 spec:
   secretName: tls-catgirls
   issuerRef: 
-    kind: Issuer
+    kind: ClusterIssuer
     name: letsencrypt-genprog
   dnsNames:
     - "catgirls.dev"
