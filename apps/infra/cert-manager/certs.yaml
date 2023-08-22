@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: crt-genprog
 spec:
-  secretName: tls-secret
+  secretName: tls-generalprogramming
   issuerRef: 
     kind: Issuer
     name: letsencrypt-genprog
@@ -16,7 +16,7 @@ kind: Certificate
 metadata:
   name: crt-catgirls
 spec:
-  secretName: tls-secret
+  secretName: tls-catgirls
   issuerRef: 
     kind: Issuer
     name: letsencrypt-genprog
