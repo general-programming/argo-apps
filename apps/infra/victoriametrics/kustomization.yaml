@@ -4,6 +4,8 @@ resources:
   - github.com/VictoriaMetrics/operator/config/default?ref=v0.35.1
   - cluster.yaml
   - vmagent.yaml
+  - agent_scrape_pod.yaml
+  - agent_scrape_service.yaml
 
 images:
 - name: victoriametrics/operator
