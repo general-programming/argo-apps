@@ -23,6 +23,8 @@ spec:
         volumeMounts:
           - mountPath: /znc-data
             name: znc-data
+          - mountPath: /znc-certs
+            name: crt-erin-znc
       containers:
       - name: znc
         image: znc:1.8.2
@@ -34,6 +36,10 @@ spec:
         volumeMounts:
         - name: znc-data
           mountPath: /znc-data
+      secrets:
+        - name: crt-erin-znc
+          secret:
+            secretName: crt-erin-znc
   volumeClaimTemplates:
   - metadata:
       name: znc-data
