@@ -18,7 +18,7 @@ spec:
         pvc:
           create: true
         configFiles:
-          config.json: {{ .Files.Get "config.json" | toPrettyJson }}
+          config.json: {{ .Files.Get "config.json" }}
     repoURL: http://zotregistry.io/helm-charts
     targetRevision: v0.1.26
   syncPolicy:
