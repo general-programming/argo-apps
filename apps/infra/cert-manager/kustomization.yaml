@@ -4,3 +4,12 @@ resources:
   - upstream/cert-manager.yaml
   - issuer.yaml
   - certs.yaml
+patches:
+  - path: patch-nameservers-00.yaml
+    target:
+      kind: Deployment
+      name: cert-manager
+  - path: patch-nameservers-01.yaml
+    target:
+      kind: Deployment
+      name: cert-manager
