@@ -16,6 +16,13 @@ spec:
         app: znc
     spec:
       terminationGracePeriodSeconds: 10
+      initContainers:
+      - name: init-config
+        image: znc:1.8.2
+        command: ['/bin/sh', '-c', "until [ -f /znc-data/configs/znc.conf ]; do echo waiting for znc.conf; sleep 2; done"]
+        volumeMounts:
+          - mountPath: /znc-data
+            name: znc-data
       containers:
       - name: znc
         image: znc:1.8.2
