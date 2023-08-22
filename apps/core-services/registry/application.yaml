@@ -15,7 +15,7 @@ spec:
         service:
           type: LoadBalancer
     repoURL: http://zotregistry.io/helm-charts
-    targetRevision: v24.0.0
+    targetRevision: v0.1.26
   syncPolicy:
     automated:
       prune: true
