@@ -7,7 +7,7 @@ stringData:
   api-token: 1M50DLxusUFeuDlRCcO1_Y35M3Fyp3iRAEKxy76v
 ---
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: letsencrypt-genprog
 spec:
