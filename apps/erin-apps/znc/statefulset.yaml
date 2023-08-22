@@ -32,6 +32,7 @@ spec:
       name: znc-data
     spec:
       storageClassName: cephfs
+      volumeMode: ReadWriteMany
       resources:
         requests:
           storage: 16Gi
