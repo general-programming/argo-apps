@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: crt-erin-znc
 spec:
-  secretName: crt-erin-znc
+  secretName: tls-erin-znc
   issuerRef: 
     kind: Issuer
     name: letsencrypt-genprog
