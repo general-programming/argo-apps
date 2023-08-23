@@ -26,6 +26,7 @@ spec:
       containers:
       - name: znc
         image: znc:1.8.2
+        restartPolicy: Always
         ports:
         - containerPort: 6667
           name: irc
