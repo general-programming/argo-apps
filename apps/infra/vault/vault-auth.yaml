@@ -37,5 +37,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: vault-auth
+    namespace: vault
   - kind: ServiceAccount
     name: test-cloud
+    namespace: vault
