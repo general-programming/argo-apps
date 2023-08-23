@@ -31,5 +31,5 @@ spec:
     - group: "admissionregistration.k8s.io/v1"
       kind: MutatingWebhookConfiguration
       name: vault-helm-agent-injector-cfg
-      jsonPointers:
-      - /webhooks/*/admissionReviewVersions/clientConfig/caBundle
+      jqPathExpressions:
+        - .webhooks[].clientConfig.caBundle
