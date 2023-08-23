@@ -16,6 +16,7 @@ spec:
         app: znc
     spec:
       terminationGracePeriodSeconds: 10
+      restartPolicy: Always
       initContainers:
       - name: init-config
         image: znc:1.8.2
@@ -26,7 +27,6 @@ spec:
       containers:
       - name: znc
         image: znc:1.8.2
-        restartPolicy: Always
         ports:
         - containerPort: 6667
           name: irc
