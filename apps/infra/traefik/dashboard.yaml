@@ -1,16 +1,12 @@
 ---
-apiVersion: secrets.hashicorp.com/v1beta1
-kind: VaultStaticSecret
+apiVersion: v1
+kind: Secret
 metadata:
-  name: vault-traefik-dashboard-auth
-spec:
-  type: kv-v2
-  mount: secret
-  path: app/traefik-dashboard-auth
-  destination:
-    name: traefik-dashboard-auth
-    create: true
-  refreshAfter: 30s
+  name: traefik-dashboard-auth
+  namespace: traefik
+data:
+  users: >-
+    b2J3OiQyeSQwOSQ3OC5MbEovazhnNmRBdy5CZWhRbTB1MkU0VTNEUmh2MVd6QzhYc1RuUlBQVnhZVXlxSC5ubSxnZW5wcm9nOiQyeSQwOSRZTWN6UEJnMmNCY2VRLkVqbElvQU91dThMcTZtWTg2ZGZFY2lhd2RuVlFtZ29aM0FNeHBLSyxuZXBlYXQ6JCRhcHIxJCQ5YzhzU3JTUCQkd3hJQThROFlyOWZZREh3QlhZLnM1Lw==
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
