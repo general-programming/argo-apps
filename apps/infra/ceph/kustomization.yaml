@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - application.yaml
   - ceph_configmap.yaml
+  - create_secrets.yaml
   - ceph_secret.yaml
   - ceph_external.yaml
   - ceph_storageclass.yaml
