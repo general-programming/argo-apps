@@ -33,7 +33,7 @@ spec:
     - websecure
 
   routes:
-    - match: Host(`fmt2-traefik-k8s.generalprogramming.org/`)
+    - match: Host(`fmt2-traefik-k8s.generalprogramming.org`)
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
