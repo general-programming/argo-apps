@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: docker pull ghcr.io/general-programming/megarepo/mailapis:latest@sha256:d4416c856deb1b8394ed21d1efbf2a2c342e2165d50e034dac51a721ee0d798c
+        image: ghcr.io/general-programming/megarepo/mailapis:latest@sha256:d4416c856deb1b8394ed21d1efbf2a2c342e2165d50e034dac51a721ee0d798c
         command:
           - python3
           - api.py
