@@ -4,4 +4,5 @@ namespace: erin-html-render-server
 resources:
   - namespace.yaml
   - secret.yaml
+  - deployment.yaml
   - service.yaml
