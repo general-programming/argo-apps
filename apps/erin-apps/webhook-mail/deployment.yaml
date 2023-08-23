@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mail-webhook
+spec:
+  selector:
+    matchLabels:
+      app: mail-webhook
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mail-webhook
+    spec:
+      containers:
+      - name: server
+        image: ghcr.io/general-programming/megarepo/html_render_server:latest@sha256:a04b4aebce9b89a808e1cd8333c2ce9aca9619a366a99948f08604b84b79dae1
+        command:
+          - python3
+          - api.py
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DISCORD_WEBHOOK
+          valueFrom:
+            secretKeyRef:
+              name: mail-webhook-secrets
+              key: discord_webhook
+        - name: AUTH_KEY
+          valueFrom:
+            secretKeyRef:
+              name: mail-webhook-secrets
+              key: auth_key
+        - name: RENDER_ENDPOINT
+          value: http://html-render-server.svc.generalprogramming.org
