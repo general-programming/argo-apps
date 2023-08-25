@@ -16,7 +16,7 @@ configMapGenerator:
   literals:
   - |
     dex.config=connectors:
-      - type: oauth
+    - type: oauth
         id: vault
         name: Vault
         config:
@@ -33,10 +33,10 @@ configMapGenerator:
             emailKey: email
 kind: Kustomization
 namespace: argocd
+resources:
+- github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.15
 patches:
   - path: argocd-cm.yaml
     target:
       kind: ConfigMap
-      name: argocd-cm
-resources:
-- github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.15
+      name: argocd-cmd-params-cm
