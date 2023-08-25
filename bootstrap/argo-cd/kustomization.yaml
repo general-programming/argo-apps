@@ -32,7 +32,6 @@ configMapGenerator:
               userNameKey: username
               groupsKey: groups
               emailKey: email
-  name: argocd-cm
 kind: Kustomization
 namespace: argocd
 resources:
