@@ -33,6 +33,10 @@ configMapGenerator:
             emailKey: email
 kind: Kustomization
 namespace: argocd
+patches:
+  - path: argocd-cm.yaml
+    target:
+      kind: ConfigMap
+      name: argocd-cm
 resources:
-- argocd-cm.yaml
 - github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.15
