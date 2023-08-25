@@ -10,18 +10,15 @@ data:
   url: https://fmt2-argo.generalprogramming.org
   dex.config: |
     connectors:
-    - type: oauth
+    - type: oidc
       id: vault
       name: Vault
       config:
+        issuer: https://vault-proxy.catgirls.dev:8200/v1/identity/oidc/provider/default
         clientID: vzs7h6HINWYepuD9A09RfKbn5owAIAfE
         clientSecret: hvo_secret_xn0vuvVfjITei4lMIyhbPqXi0Qp4UoJXagb0eBsGUOga7l8DSYRBbebMBDzzog1P
-        redirectURI: https://fmt2-argo.generalprogramming.org/api/dex/callback
-
-        tokenURL: https://vault-proxy.catgirls.dev:8200/v1/identity/oidc/provider/default/token
-        authorizationURL: https://vault-proxy.catgirls.dev:8200/ui/vault/identity/oidc/provider/default/authorize
-        userInfoURL: https://vault-proxy.catgirls.dev:8200/v1/identity/oidc/provider/default/userinfo
-        claimMapping:
-          userNameKey: username
-          groupsKey: groups
-          emailKey: email
+        insecureEnableGroups: true
+        scopes:
+        - profile
+        - email
+        - groups
