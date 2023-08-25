@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+  namespace: argocd
+data:
+  dex.config: |
+    connectors:
+    - type: oauth
+        id: vault
+        name: Vault
+        config:
+          clientID: vzs7h6HINWYepuD9A09RfKbn5owAIAfE
+          clientSecret: hvo_secret_xn0vuvVfjITei4lMIyhbPqXi0Qp4UoJXagb0eBsGUOga7l8DSYRBbebMBDzzog1P
+          redirectURI: https://fmt2-argo.generalprogramming.org/api/dex/callback
+
+          tokenURL: https://vault-proxy.catgirls.dev:8200/v1/identity/oidc/provider/default/token
+          authorizationURL: https://vault-proxy.catgirls.dev:8200/ui/vault/identity/oidc/provider/default/authorize
+          userInfoURL: https://vault-proxy.catgirls.dev:8200/v1/identity/oidc/provider/default/userinfo
+          claimMapping:
+            userNameKey: username
+            groupsKey: groups
+            emailKey: email
