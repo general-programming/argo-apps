@@ -6,4 +6,4 @@ metadata:
     app.kubernetes.io/part-of: argocd
   namespace: argocd
 data:
-  server.insecure: true
+  server.insecure: "true"
