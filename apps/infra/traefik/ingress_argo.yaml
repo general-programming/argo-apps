@@ -12,13 +12,13 @@ spec:
       priority: 10
       services:
         - name: argocd-server
-          port: 80
+          port: 443
     - kind: Rule
       match: Host(`fmt2-argo.generalprogramming.org`) && Headers(`Content-Type`, `application/grpc`)
       priority: 11
       services:
         - name: argocd-server
-          port: 80
+          port: 443
           scheme: h2c
   tls:
     certResolver: default
