@@ -10,7 +10,7 @@ configMapGenerator:
       url: https://github.com/
       usernameSecret:
         key: git_username
-        name: autopilot-secret
+      name: autopilot-secret
 kind: Kustomization
 namespace: argocd
 resources:
@@ -20,3 +20,7 @@ patches:
     target:
       kind: ConfigMap
       name: argocd-cm
+  - path: rbac.yaml
+    target:
+      kind: ConfigMap
+      name: argocd-rbac-cm
