@@ -9,6 +9,8 @@ metadata:
 data:
   url: https://fmt2-argo.generalprogramming.org
   dex.config: |
+    logger:
+      level: debug
     connectors:
     - type: oidc
       id: vault
