@@ -20,7 +20,6 @@ spec:
           args:
             - --source=service
             - --source=ingress
-            - --registry=txt
             - --provider=cloudflare
             - --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
             - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
