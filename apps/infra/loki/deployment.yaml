@@ -58,4 +58,4 @@ spec:
       accessModes: ["ReadWriteMany"]
       resources:
         requests:
-          storage: 32i
+          storage: 32Gi
