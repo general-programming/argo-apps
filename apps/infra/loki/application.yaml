@@ -38,56 +38,56 @@ spec:
                   prefix: loki_index_
                   period: 24h
 
-          gateway:
-            service:
-              type: LoadBalancer
-              annotations:
-                external-dns.alpha.kubernetes.io/hostname: loki.fmt2.generalprogramming.org
+        gateway:
+          service:
+            type: LoadBalancer
+            annotations:
+              external-dns.alpha.kubernetes.io/hostname: loki.fmt2.generalprogramming.org
 
-          backend:
-            extraArgs:
-              - '-config.expand-env=true'
-            extraEnv:
-              - name: S3_ACCESS_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_access_key
-              - name: S3_SECRET_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_secret_key
+        backend:
+          extraArgs:
+            - '-config.expand-env=true'
+          extraEnv:
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_access_key
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_secret_key
 
-          read:
-            extraArgs:
-              - '-config.expand-env=true'
-            extraEnv:
-              - name: S3_ACCESS_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_access_key
-              - name: S3_SECRET_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_secret_key
+        read:
+          extraArgs:
+            - '-config.expand-env=true'
+          extraEnv:
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_access_key
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_secret_key
 
-          write:
-            extraArgs:
-              - '-config.expand-env=true'
-            extraEnv:
-              - name: S3_ACCESS_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_access_key
-              - name: S3_SECRET_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: loki-secrets
-                    key: s3_secret_key
+        write:
+          extraArgs:
+            - '-config.expand-env=true'
+          extraEnv:
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_access_key
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: loki-secrets
+                  key: s3_secret_key
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: v5.15.0
   syncPolicy:
