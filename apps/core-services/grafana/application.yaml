@@ -12,6 +12,12 @@ spec:
     chart: grafana
     helm:
       valuesObject:
+        dashboards:
+          default:
+            proxmox:
+              gnetId: 13307
+              revision: 6
+              datasource: VM-FMT2
         persistence:
           enabled: true
           accessModes: ["ReadWriteMany"]
@@ -58,6 +64,8 @@ spec:
             traefik.ingress.kubernetes.io/router.tls: "true"
           hosts:
             - grafana.generalprogramming.org
+        admin:
+          existingSecret: grafana-secrets
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: v6.59.0
   syncPolicy:
