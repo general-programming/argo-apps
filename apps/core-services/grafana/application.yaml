@@ -14,6 +14,7 @@ spec:
       valuesObject:
         persistence:
           enabled: true
+          accessModes: ["ReadWriteMany"]
         extraSecretMounts:
           - name: grafana-secrets
             secretName: grafana-secrets
