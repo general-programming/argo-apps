@@ -21,5 +21,5 @@ data:
         clientSecret: hvo_secret_xn0vuvVfjITei4lMIyhbPqXi0Qp4UoJXagb0eBsGUOga7l8DSYRBbebMBDzzog1P
         insecureEnableGroups: true
         scopes:
-        - identity
+        - user
         userNameKey: username
