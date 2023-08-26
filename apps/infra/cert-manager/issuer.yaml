@@ -14,6 +14,8 @@ spec:
         dnsZones:
           - "generalprogramming.org"
           - "catgirls.dev"
+          - "owo.me"
+          - "e2.pm"
       dns01:
         cloudflare:
           apiTokenSecretRef:
