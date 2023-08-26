@@ -21,6 +21,45 @@ spec:
               gnetId: 13307
               revision: 6
               datasource: VM-FMT2
+            ceph-cluster:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster.json
+              datasource: VM-FMT2
+            cephfs-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/cephfs-overview.json
+              datasource: VM-FMT2
+            host-details:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/host-details.json
+              datasource: VM-FMT2
+            hosts-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/hosts-overview.json
+              datasource: VM-FMT2
+            osd-device-details:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/osd-device-details.json
+              datasource: VM-FMT2
+            osds-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/osds-overview.json
+              datasource: VM-FMT2
+            pool-detail:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/pool-detail.json
+              datasource: VM-FMT2
+            pool-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/pool-overview.json
+              datasource: VM-FMT2
+            radosgw-detail:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/radosgw-detail.json
+              datasource: VM-FMT2
+            radosgw-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/radosgw-overview.json
+              datasource: VM-FMT2
+            radosgw-sync-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/radosgw-sync-overview.json
+              datasource: VM-FMT2
+            rbd-details:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/rbd-details.json
+              datasource: VM-FMT2
+            rbd-overview:
+              url: https://raw.githubusercontent.com/ceph/ceph/main/monitoring/ceph-mixin/dashboards_out/rbd-overview.json
+              datasource: VM-FMT2
         persistence:
           enabled: true
           accessModes: ["ReadWriteMany"]
