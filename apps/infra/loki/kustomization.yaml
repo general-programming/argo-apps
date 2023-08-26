@@ -9,5 +9,4 @@ configMapGenerator:
     disableNameSuffixHash: true
 resources:
   - secrets.yaml
-  - deployment.yaml
-  - service.yaml
+  - application.yaml

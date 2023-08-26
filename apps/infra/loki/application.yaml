@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki-helm
+  namespace: argocd
+spec:
+  destination:
+    namespace: loki
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: loki
+    helm:
+      valueFiles:
+        - values.yaml
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: v5.15.0
+  syncPolicy:
+    automated:
+      prune: true
