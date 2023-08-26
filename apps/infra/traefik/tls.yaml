@@ -24,6 +24,32 @@ spec:
     - "catgirls.dev"
     - "*.catgirls.dev"
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: crt-owo
+spec:
+  secretName: tls-owo
+  issuerRef: 
+    kind: ClusterIssuer
+    name: letsencrypt-genprog
+  dnsNames:
+    - "owo.me"
+    - "*.owo.me"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: crt-e2pm
+spec:
+  secretName: tls-e2pm
+  issuerRef: 
+    kind: ClusterIssuer
+    name: letsencrypt-genprog
+  dnsNames:
+    - "e2.pm"
+    - "*.e2.pm"
+---
 apiVersion: traefik.io/v1alpha1
 kind: TLSStore
 metadata:
@@ -33,5 +59,7 @@ spec:
   certificates:
     - secretName: tls-generalprogramming
     - secretName: tls-catgirls
+    - secretName: tls-owo
+    - secretName: tls-e2pm
   defaultCertificate:
     secretName: tls-generalprogramming
