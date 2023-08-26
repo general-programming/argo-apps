@@ -33,6 +33,7 @@ spec:
           volumeMounts:
           - mountPath: /local-data
             name: loki-scratch
+          volumes:
           - name: loki-config
             mountPath: /etc/loki
             configMap:
