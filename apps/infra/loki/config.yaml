@@ -11,8 +11,8 @@ common:
       endpoint: http://10.65.67.100
       bucketnames: loki
       s3forcepathstyle: true
-      access_key_id: K307MTDP4QHFW0QW6TO8
-      secret_access_key: yhlSevhrmjAW7pEJs1KqLVK2SNC3qfaW6XpyJizy
+      access_key_id: ${S3_ACCESS_KEY}
+      secret_access_key: ${S3_SECRET_KEY}
     # filesystem:
     #   chunks_directory: /data/chunks
     #   rules_directory: /data/rules

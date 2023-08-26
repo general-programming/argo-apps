@@ -1,45 +1,61 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   annotations: {}
   labels:
     name: loki
   name: loki
 spec:
+  serviceName: "loki"
   minReadySeconds: 30
-  replicas: 6
-  revisionHistoryLimit: 10
+  replicas: 5
   selector:
     matchLabels:
-      name: loki
+      app: loki
   strategy:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  template:
-    metadata:
-      annotations: {}
-      labels:
-        name: loki
-    spec:
-      containers:
-      - args: []
-        command:
-        - --config.file=/etc/loki/config.yaml
-        env: []
-        image: grafana/loki:2.8.1
-        imagePullPolicy: IfNotPresent
-        name: loki
-        ports:
-        - containerPort: 3100
-          name: http
-        - containerPort: 9095
-          name: grpc
-        volumeMounts:
-        - mountPath: /tmp
-          name: tmp
+  containers:
+    - name: loki
+      args: []
+      command:
+      - --config.file=/etc/loki/config.yaml
+      - --config.expand-env=true 
+      image: grafana/loki:2.8.1
+      imagePullPolicy: IfNotPresent
+      ports:
+      - containerPort: 3100
+        name: http
+      - containerPort: 9095
+        name: grpc
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /local-data
+        name: loki-scratch
       terminationGracePeriodSeconds: 30
       volumes:
       - emptyDir: {}
         name: tmp
+      env:
+      - name: S3_ACCESS_KEY
+        valueFrom:
+          secretKeyRef:
+            name: loki-secrets
+            key: s3_access_key
+      - name: S3_SECRET_KEY
+        valueFrom:
+          secretKeyRef:
+            name: loki-secrets
+            key: s3_secret_key
+  volumeClaimTemplates:
+  - metadata:
+      name: loki-scratch
+    spec:
+      storageClassName: cephfs
+      accessModes: ["ReadWriteMany"]
+      resources:
+        requests:
+          storage: 32i
