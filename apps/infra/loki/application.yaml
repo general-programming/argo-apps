@@ -40,6 +40,11 @@ spec:
                   prefix: loki_index_
                   period: 24h
 
+        monitoring:
+          selfMonitoring:
+            grafanaAgent:
+              installOperator: false
+
         gateway:
           service:
             type: LoadBalancer
