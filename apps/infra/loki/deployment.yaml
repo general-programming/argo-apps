@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   annotations: {}
-  labels:
-    name: loki
   name: loki
 spec:
   serviceName: "loki"
