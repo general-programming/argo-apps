@@ -44,10 +44,13 @@ spec:
         sidecar:
           datasources:
             enabled: true
+            searchNamespace: ALL
           alerts:
             enabled: true
+            searchNamespace: ALL
           dashboards:
             enabled: true
+            searchNamespace: ALL
         ingress:
           enabled: true
           annotations:
