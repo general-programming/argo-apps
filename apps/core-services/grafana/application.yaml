@@ -41,6 +41,10 @@ spec:
             role_attribute_path: "contains(groups[*], 'superadmin') && 'GrafanaAdmin' || contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'"
             allow_assign_grafana_admin: true
         sidecar:
+          datasources:
+            enabled: true
+          alerts:
+            enabled: true
           dashboards:
             enabled: true
         ingress:
