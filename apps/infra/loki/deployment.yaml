@@ -10,44 +10,40 @@ spec:
   selector:
     matchLabels:
       app: loki
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+  updateStrategy:
     type: RollingUpdate
-  containers:
-    - name: loki
-      args: []
-      command:
-      - --config.file=/etc/loki/config.yaml
-      - --config.expand-env=true 
-      image: grafana/loki:2.8.1
-      imagePullPolicy: IfNotPresent
-      ports:
-      - containerPort: 3100
-        name: http
-      - containerPort: 9095
-        name: grpc
-      volumeMounts:
-      - mountPath: /tmp
-        name: tmp
-      - mountPath: /local-data
-        name: loki-scratch
-      terminationGracePeriodSeconds: 30
-      volumes:
-      - emptyDir: {}
-        name: tmp
-      env:
-      - name: S3_ACCESS_KEY
-        valueFrom:
-          secretKeyRef:
-            name: loki-secrets
-            key: s3_access_key
-      - name: S3_SECRET_KEY
-        valueFrom:
-          secretKeyRef:
-            name: loki-secrets
-            key: s3_secret_key
+  template:
+    metadata:
+      labels:
+        app: loki
+    spec:
+      containers:
+        - name: loki
+          args: []
+          command:
+          - --config.file=/etc/loki/config.yaml
+          - --config.expand-env=true 
+          image: grafana/loki:2.8.1
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 3100
+            name: http
+          - containerPort: 9095
+            name: grpc
+          volumeMounts:
+          - mountPath: /local-data
+            name: loki-scratch
+          env:
+          - name: S3_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: loki-secrets
+                key: s3_access_key
+          - name: S3_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: loki-secrets
+                key: s3_secret_key
   volumeClaimTemplates:
   - metadata:
       name: loki-scratch
