@@ -22,4 +22,6 @@ data:
         insecureEnableGroups: true
         scopes:
         - user
+        claimMapping:
+          preferred_username: username
         userNameKey: username
