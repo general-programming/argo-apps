@@ -12,6 +12,9 @@ spec:
     chart: grafana
     helm:
       valuesObject:
+        plugins:
+          - vonage-status-panel
+          - grafana-piechart-panel
         dashboards:
           default:
             proxmox:
