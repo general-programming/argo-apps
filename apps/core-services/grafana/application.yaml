@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  destination:
+    namespace: grafana
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: grafana
+    helm:
+      valuesObject:
+        grafana.ini:
+          server:
+            domain: grafana.generalprogramming.org
+        sidecar:
+          dashboards:
+            enabled: true
+        ingress:
+          enabled: true
+          annotations:
+            traefik.ingress.kubernetes.io/router.entrypoints: websecure
+            traefik.ingress.kubernetes.io/router.tls: "true"
+          hosts:
+            - grafana.generalprogramming.org
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: v6.59.0
+  syncPolicy:
+    automated:
+      prune: true

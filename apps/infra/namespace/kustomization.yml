@@ -6,6 +6,9 @@ resources:
   - traefik.yaml
   - consul.yaml
   - vault.yaml
-  - registry.yaml
   - external-dns.yaml
   - grafana-operator.yaml
+
+  # apps
+  - registry.yaml
+  - grafana.yaml
