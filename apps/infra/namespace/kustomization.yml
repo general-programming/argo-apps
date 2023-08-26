@@ -7,3 +7,4 @@ resources:
   - consul.yaml
   - vault.yaml
   - registry.yaml
+  - external-dns.yaml
