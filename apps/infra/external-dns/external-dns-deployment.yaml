@@ -21,7 +21,6 @@ spec:
             - --source=service
             - --source=ingress
             - --provider=cloudflare
-            - --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
             - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
           env:
           - name: CF_API_TOKEN
