@@ -21,7 +21,7 @@ spec:
         cpu: "2"
         memory: 1Gi
   vmselect:
-    replicaCount: 2
+    replicaCount: 3
     cacheMountPath: "/select-cache"
     storage:
       volumeClaimTemplate:
@@ -37,5 +37,14 @@ spec:
     serviceSpec:
       spec:
         type: LoadBalancer
+      metadata:
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: vmselect.fmt2.generalprogramming.org
   vminsert:
-    replicaCount: 2
+    replicaCount: 3
+    serviceSpec:
+      spec:
+        type: LoadBalancer
+      metadata:
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: vminsert.fmt2.generalprogramming.org
