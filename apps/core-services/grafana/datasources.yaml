@@ -21,3 +21,9 @@ stringData:
       orgId: 1
       url: http://10.1.1.132:8428
       editable: false
+    - name: Loki-FMT2
+      type: loki
+      access: proxy
+      orgId: 1
+      url: http://loki-gateway.loki.svc.generalprogramming.org
+      editable: false
