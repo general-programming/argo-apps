@@ -13,7 +13,7 @@ spec:
     helm:
       valuesObject:
         global:
-          clusterDomain: generalprogramming.org
+          clusterDomain: "generalprogramming.org"
         loki:
           auth_enabled: false
 
