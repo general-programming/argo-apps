@@ -8,3 +8,4 @@ resources:
   - vault.yaml
   - registry.yaml
   - external-dns.yaml
+  - grafana-operator.yaml

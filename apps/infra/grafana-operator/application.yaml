@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-operator-helm
+  namespace: argocd
+spec:
+  destination:
+    namespace: grafana-operator
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: grafana-agent-operator
+    helm:
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: v0.3.2
+  syncPolicy:
+    automated:
+      prune: true
