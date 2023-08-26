@@ -12,6 +12,8 @@ spec:
     chart: loki
     helm:
       valuesObject:
+        global:
+          clusterDomain: generalprogramming.org
         loki:
           auth_enabled: false
 
