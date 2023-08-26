@@ -5,6 +5,8 @@ configMapGenerator:
 - files:
   - config.yaml
   name: loki-config
+  options:
+    disableNameSuffixHash: true
 resources:
   - secrets.yaml
   - deployment.yaml
