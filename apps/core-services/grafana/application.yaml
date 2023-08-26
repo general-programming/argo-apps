@@ -21,6 +21,7 @@ spec:
         grafana.ini:
           server:
             domain: grafana.generalprogramming.org
+            root_url: https://grafana.generalprogramming.org
           auth.generic_oauth:
             enabled: true
             name: General Programming SSO
