@@ -11,7 +11,7 @@ spec:
   source:
     chart: consul
     helm:
-      values: |-
+      valuesObject:
         global:
           name: fmt2
           datacenter: fmt2

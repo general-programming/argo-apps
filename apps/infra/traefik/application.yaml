@@ -11,7 +11,7 @@ spec:
   source:
     chart: traefik
     helm:
-      values: |-
+      valuesObject:
         deployment:
           kind: DaemonSet
           updateStrategy:

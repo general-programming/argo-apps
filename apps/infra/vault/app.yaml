@@ -11,7 +11,7 @@ spec:
   source:
     chart: vault
     helm:
-      values: |-
+      valuesObject:
         global:
           enabled: false
           tlsDisable: false

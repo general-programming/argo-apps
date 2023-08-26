@@ -11,7 +11,7 @@ spec:
   source:
     chart: zot
     helm:
-      values: |-
+      valuesObject:
         service:
           type: LoadBalancer
         persistence: true
