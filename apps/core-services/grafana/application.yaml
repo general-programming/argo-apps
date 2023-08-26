@@ -12,6 +12,8 @@ spec:
     chart: grafana
     helm:
       valuesObject:
+        persistence:
+          enabled: true
         extraSecretMounts:
           - name: grafana-secrets
             secretName: grafana-secrets
