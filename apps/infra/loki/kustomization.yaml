@@ -6,5 +6,6 @@ configMapGenerator:
   - config.yaml
   name: loki-config
 resources:
+  - secrets.yaml
   - deployment.yaml
   - service.yaml
