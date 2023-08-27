@@ -7,7 +7,7 @@ spec:
   retentionPeriod: "4"
   replicationFactor: 2
   vmstorage:
-    replicaCount: 2
+    replicaCount: 5
     storageDataPath: "/vm-data"
     storage:
       volumeClaimTemplate:
