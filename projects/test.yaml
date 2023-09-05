@@ -34,20 +34,14 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - merge:
-        mergeKeys:
-          - values.selector
+    - matrix:
         generators:
-          - clusters:
-              values:
-                selector: '{{ name }}'
+          - clusters: {}
           - git:
               repoURL: https://github.com/general-programming/argo-fmt2.git
               revision: HEAD
               directories:
-              - path: apps/test/*/{{name}}
-              values:
-                selector: '{{ path }}'
+              - path: apps/test/*
   syncPolicy: {}
   template:
     metadata:
@@ -57,7 +51,7 @@ spec:
       source:
         repoURL: https://github.com/general-programming/argo-fmt2.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path}}/{{name}}'
       destination:
         server: '{{server}}'
         namespace: '{{path.basename}}'
