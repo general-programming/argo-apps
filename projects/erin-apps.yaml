@@ -51,7 +51,7 @@ spec:
       source:
         repoURL: https://github.com/general-programming/argo-fmt2.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path}}/{{name}}'
       destination:
         server: '{{server}}'
         namespace: '{{path.basename}}'
