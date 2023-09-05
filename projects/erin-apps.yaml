@@ -34,11 +34,14 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/general-programming/argo-fmt2.git
-      revision: HEAD
-      directories:
-      - path: apps/erin-apps/*
+    - matrix:
+        generators:
+          - clusters: {}
+          - git:
+              repoURL: https://github.com/general-programming/argo-fmt2.git
+              revision: HEAD
+              directories:
+              - path: apps/erin-apps/*
   syncPolicy: {}
   template:
     metadata:
@@ -50,7 +53,7 @@ spec:
         targetRevision: HEAD
         path: '{{path}}'
       destination:
-        server: https://kubernetes.default.svc
+        server: '{{server}}'
         namespace: '{{path.basename}}'
       syncPolicy:
         syncOptions:
