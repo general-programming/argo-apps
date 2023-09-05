@@ -35,8 +35,6 @@ metadata:
 spec:
   generators:
     - merge:
-        mergeKeys:
-          - values.selector
         generators:
           - clusters: {}
           - git:
