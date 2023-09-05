@@ -35,13 +35,19 @@ metadata:
 spec:
   generators:
     - merge:
+        mergeKeys:
+          - values.selector
         generators:
-          - clusters: {}
+          - clusters:
+              values:
+                selector: '{{ name }}'
           - git:
               repoURL: https://github.com/general-programming/argo-fmt2.git
               revision: HEAD
               directories:
               - path: apps/test/*/{{name}}
+              values:
+                selector: '{{ path }}'
   syncPolicy: {}
   template:
     metadata:
