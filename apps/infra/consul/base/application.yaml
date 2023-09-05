@@ -12,9 +12,6 @@ spec:
     chart: consul
     helm:
       valuesObject:
-        global:
-          name: fmt2
-          datacenter: fmt2
         connectInject:
           enabled: false
         client:
