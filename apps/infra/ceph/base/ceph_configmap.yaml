@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: rook-ceph-mon-endpoints
   namespace: ceph
-  labels:
-    app.kubernetes.io/instance: ceph
 data:
   csi-cluster-config-json: >-
     [{"clusterID":"ceph","monitors":["10.65.67.100:6789","10.65.67.101:6789","10.65.67.102:6789"],"namespace":""}]
