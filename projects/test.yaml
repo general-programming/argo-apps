@@ -41,7 +41,7 @@ spec:
               repoURL: https://github.com/general-programming/argo-fmt2.git
               revision: HEAD
               directories:
-              - path: apps/test/{{nameNormalized}}/*
+              - path: apps/test/*/{{nameNormalized}}
   syncPolicy: {}
   template:
     metadata:
