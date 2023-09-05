@@ -38,7 +38,7 @@ spec:
         generators:
           - clusters: {}
           - git:
-              repoURL: https://github.com/general-programming/argo-fmt2.git
+              repoURL: https://github.com/general-programming/argo-apps.git
               revision: HEAD
               directories:
               - path: apps/erin-apps/*
@@ -49,7 +49,7 @@ spec:
     spec:
       project: "erin-apps"
       source:
-        repoURL: https://github.com/general-programming/argo-fmt2.git
+        repoURL: https://github.com/general-programming/argo-apps.git
         targetRevision: HEAD
         path: '{{path}}/{{name}}'
       destination:

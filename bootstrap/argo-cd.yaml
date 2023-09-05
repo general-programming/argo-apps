@@ -19,7 +19,7 @@ spec:
   project: default
   source:
     path: argocd
-    repoURL: https://github.com/general-programming/argo-fmt2.git
+    repoURL: https://github.com/general-programming/argo-apps.git
   syncPolicy:
     automated:
       allowEmpty: true
