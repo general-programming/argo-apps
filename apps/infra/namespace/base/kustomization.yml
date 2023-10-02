@@ -13,3 +13,6 @@ resources:
   # apps
   - registry.yaml
   - grafana.yaml
+
+  # users
+  - erin/
