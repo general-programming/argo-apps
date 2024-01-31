@@ -18,4 +18,5 @@ spec:
       managedFieldsManagers:
       - rook
     - kind: ConfigMap
-      jsonPointers: /metadata/labels/app.kubernetes.io~1instance
+      jsonPointers:
+      - /metadata/labels/app.kubernetes.io~1instance
