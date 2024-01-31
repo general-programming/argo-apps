@@ -96,7 +96,7 @@ spec:
                   name: loki-secrets
                   key: s3_secret_key
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: v5.15.0
+    targetRevision: v5.42.0
   syncPolicy:
     automated:
       prune: true
