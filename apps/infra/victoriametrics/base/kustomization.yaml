@@ -7,4 +7,4 @@ resources:
 
 images:
 - name: victoriametrics/operator
-  newTag: v0.35.1
+  newTag: v0.41.0
