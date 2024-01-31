@@ -21,7 +21,7 @@ spec:
   project: default
   source:
     path: projects
-    repoURL: https://github.com/general-programming/argo-apps.git
+    repoURL: git@github.com:general-programming/argo-apps.git
   syncPolicy:
     automated:
       allowEmpty: true
