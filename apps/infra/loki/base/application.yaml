@@ -18,17 +18,17 @@ spec:
           auth_enabled: false
 
           storage:
-            bucketNames:
-              chunks: loki-chunks
-              ruler: loki-ruler
-              admin: loki-admin
             type: s3
             s3:
               endpoint: http://10.65.67.100
               accessKeyId: ${S3_ACCESS_KEY}
               secretAccessKey: ${S3_SECRET_KEY}
-              s3ForcePathStyle: false
+              s3ForcePathStyle: true
               insecure: false
+            bucketNames:
+              chunks: loki-chunks
+              ruler: loki-ruler
+              admin: loki-admin
           
           schemaConfig:
             configs:
