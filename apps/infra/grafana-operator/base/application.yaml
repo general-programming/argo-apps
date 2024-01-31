@@ -12,7 +12,7 @@ spec:
     chart: grafana-agent-operator
     helm:
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: v0.3.2
+    targetRevision: v0.3.15
   syncPolicy:
     automated:
       prune: true
