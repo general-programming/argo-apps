@@ -25,3 +25,4 @@ patches:
     target:
       kind: ConfigMap
       name: argocd-rbac-cm
+  - path: patch_ha.yaml
