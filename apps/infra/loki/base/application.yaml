@@ -102,6 +102,6 @@ spec:
       prune: true
   ignoreDifferences:
     - group: "*"
-      kind: "VMServiceScrape"
+      kind: "*"
       managedFieldsManagers:
       - manager
