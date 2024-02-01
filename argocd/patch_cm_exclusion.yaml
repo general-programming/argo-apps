@@ -9,7 +9,7 @@ metadata:
 data:
   resource.exclusions: |
     - apiGroups:
-      - "operator.victoriametrics.com/*"
+      - "*"
       kinds:
       - "VMServiceScrape"
       clusters:
