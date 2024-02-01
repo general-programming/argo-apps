@@ -100,3 +100,8 @@ spec:
   syncPolicy:
     automated:
       prune: true
+  ignoreDifferences:
+    - group: "*"
+      kind: "VMServiceScrape"
+      managedFieldsManagers:
+      - manager
