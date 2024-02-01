@@ -100,8 +100,3 @@ spec:
   syncPolicy:
     automated:
       prune: true
-  ignoreDifferences:
-    - group: "*"
-      kind: "*"
-      managedFieldsManagers:
-      - manager

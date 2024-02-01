@@ -21,6 +21,10 @@ patches:
     target:
       kind: ConfigMap
       name: argocd-cm
+  - path: patch_cm_exclusion.yaml
+    target:
+      kind: ConfigMap
+      name: argocd-cm
   - path: rbac.yaml
     target:
       kind: ConfigMap
