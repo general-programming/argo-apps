@@ -8,25 +8,40 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  ignoreDifferences:
-  - group: argoproj.io
-    jsonPointers:
-    - /status
-    kind: Application
-  project: default
-  source:
-    path: argocd
-    repoURL: git@github.com:general-programming/argo-apps.git
-  syncPolicy:
-    automated:
-      allowEmpty: true
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - allowEmpty=true
+  generators:
+    - matrix:
+        generators:
+          - clusters: {}
+          - git:
+              repoURL: git@github.com:general-programming/argo-apps.git
+              revision: HEAD
+              directories:
+              - path: argocd/*
+  syncPolicy: {}
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: git@github.com:general-programming/argo-apps.git
+        targetRevision: HEAD
+        path: '{{path}}/{{name}}'
+      destination:
+        server: '{{server}}'
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - allowEmpty=true
+      ignoreDifferences:
+      - group: argoproj.io
+        jsonPointers:
+        - /status
+        kind: Application
 status:
   health: {}
   summary: {}

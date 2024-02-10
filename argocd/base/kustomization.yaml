@@ -17,10 +17,6 @@ resources:
 - github.com/argoproj-labs/argocd-autopilot/manifests/ha?ref=v0.4.17
 - argocd-lb.yaml
 patches:
-  - path: patch_cm_dex.yaml
-    target:
-      kind: ConfigMap
-      name: argocd-cm
   - path: rbac.yaml
     target:
       kind: ConfigMap
