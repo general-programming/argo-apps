@@ -4,4 +4,3 @@ resources:
   - application.yaml
   - tls.yaml
   - dashboard.yaml
-  - ingress_argo.yaml
