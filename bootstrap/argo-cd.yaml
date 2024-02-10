@@ -16,7 +16,7 @@ spec:
               repoURL: git@github.com:general-programming/argo-apps.git
               revision: HEAD
               directories:
-              - path: argocd/*
+              - path: argocd
   syncPolicy: {}
   template:
     metadata:
