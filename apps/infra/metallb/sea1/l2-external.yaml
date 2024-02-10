@@ -1,0 +1,18 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool-external
+  namespace: metallb-system
+spec:
+  autoAssign: false
+  addresses:
+    - 2602:fa6d:10:ffff::e00/120
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: advertisement-external
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - pool-external
