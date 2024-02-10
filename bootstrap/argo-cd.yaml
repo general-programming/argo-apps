@@ -42,16 +42,3 @@ spec:
         jsonPointers:
         - /status
         kind: Application
-      - group: argoproj.io
-        jsonPointers:
-        - /status
-        kind: Application
-status:
-  health: {}
-  summary: {}
-  sync:
-    comparedTo:
-      destination: {}
-      source:
-        repoURL: ""
-    status: ""
