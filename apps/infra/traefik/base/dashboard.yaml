@@ -17,20 +17,3 @@ metadata:
 spec:
   basicAuth:
     secret: traefik-dashboard-auth
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: traefik-dashboard
-  namespace: traefik
-
-spec:
-  routes:
-    - match: Host(`fmt2-traefik-k8s.generalprogramming.org`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
-      kind: Rule
-      middlewares:
-        - name: traefik-dashboard-basicauth
-          namespace: traefik
-      services:
-        - name: api@internal
-          kind: TraefikService
