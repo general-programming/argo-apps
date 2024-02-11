@@ -4,6 +4,5 @@ resources:
   - ../base
   - ingress_argo.yaml
   - ingress_dashboard.yaml
-# TODO: Fix MetalLB for IPv6 only.
-# patches:
-#   - path: application.yaml
+patches:
+  - path: application.yaml
