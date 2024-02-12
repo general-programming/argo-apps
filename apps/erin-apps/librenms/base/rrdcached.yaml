@@ -30,12 +30,12 @@ spec:
           volumeMounts:
             - name: data-volume
               mountPath: /data
-      volumeClaimTemplates:
-        - metadata:
-            name: data-volume
-          spec:
-            accessModes: [ "ReadWriteOnce" ]
-            resources:
-              requests:
-                storage: 16Gi
-            storageClassName: cephfs
+  volumeClaimTemplates:
+    - metadata:
+        name: data-volume
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 16Gi
+        storageClassName: cephfs
