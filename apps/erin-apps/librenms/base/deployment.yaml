@@ -12,6 +12,10 @@ spec:
       labels:
         app: librenms
     spec:
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
       containers:
       - name: librenms
         image: nepeat/librenms:latest
@@ -20,7 +24,6 @@ spec:
             name: librenms-config
         - secretRef:
             name: librenms-secrets
-
         volumeMounts:
         - name: librenms-data
           mountPath: /data
@@ -43,6 +46,10 @@ spec:
       labels:
         app: librenms-dispatcher
     spec:
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
       containers:
       - name: librenms
         image: nepeat/librenms:latest
