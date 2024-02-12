@@ -8,3 +8,6 @@ data:
   PGID: "1000"
   LIBRENMS_POLLER_INTERVAL: "3"
   LIBRENMS_BASE_URL: https://nms.generalprogramming.org
+  REDIS_HOST: librenms-redis
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
