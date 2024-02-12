@@ -13,6 +13,7 @@ resources:
   # apps
   - registry.yaml
   - grafana.yaml
+  - librenms.yaml
 
   # users
   - erin/
