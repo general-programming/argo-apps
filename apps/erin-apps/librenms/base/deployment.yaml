@@ -8,9 +8,6 @@ spec:
       app: librenms
   replicas: 1
   template:
-    metadata:
-      labels:
-        app: librenms
     spec:
       containers:
       - name: redis
@@ -39,6 +36,7 @@ spec:
             name: librenms-config
         - secretRef:
             name: librenms-secrets
+
         volumeMounts:
         - name: librenms-data
           mountPath: /data
