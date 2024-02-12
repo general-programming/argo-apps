@@ -9,6 +9,7 @@ resources:
   - vault.yaml
   - external-dns.yaml
   - grafana-operator.yaml
+  - reloader.yaml
 
   # apps
   - registry.yaml
