@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: librenms-config
+data:
+  TZ: UTC
+  PUID: "1000"
+  PGID: "1000"
+  LIBRENMS_POLLER_INTERVAL: "3"
+  LIBRENMS_BASE_URL: https://nms.generalprogramming.org

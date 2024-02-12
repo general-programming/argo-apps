@@ -4,4 +4,5 @@ namespace: librenms
 resources:
   - shared-pv.yaml
   - deployment.yaml
+  - rrdcached.yaml
   - service.yaml

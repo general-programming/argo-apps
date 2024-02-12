@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rrdcached
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rrdcached
+  serviceName: rrdcached
+  template:
+    metadata:
+      labels:
+        app: rrdcached
+    spec:
+      containers:
+        - name: rrdcached
+          image: crazymax/rrdcached
+          env:
+            - name: LOG_LEVEL
+              value: LOG_INFO
+            - name: WRITE_TIMEOUT
+              value: "1800"
+            - name: WRITE_JITTER
+              value: "1800"
+            - name: WRITE_THREADS
+              value: "4"
+            - name: FLUSH_DEAD_DATA_INTERVAL
+              value: "3600"
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: rrdcached-data
+            storageClassName: cephfs
