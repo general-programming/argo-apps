@@ -33,6 +33,7 @@ spec:
       containers:
       - name: librenms
         image: librenms/librenms:latest
+        dnsPolicy: Default
         envFrom:
         - configMapRef:
             name: librenms-config
