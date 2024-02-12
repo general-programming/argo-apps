@@ -56,8 +56,12 @@ spec:
         server: '{{server}}'
         namespace: '{{path.basename}}'
       syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
         syncOptions:
-        - CreateNamespace=true
+          - allowEmpty=true
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:

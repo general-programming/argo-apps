@@ -30,3 +30,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - allowEmpty=true
