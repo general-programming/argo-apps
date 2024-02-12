@@ -6,4 +6,5 @@ resources:
   - shared-pv.yaml
   - deployment.yaml
   - rrdcached.yaml
+  - redis.yaml
   - service.yaml
