@@ -4,3 +4,4 @@ resources:
   - application.yaml
   - ceph_external.yaml
   - ceph_storageclass.yaml
+  - create_secrets.yaml
