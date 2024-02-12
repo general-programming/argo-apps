@@ -11,3 +11,4 @@ data:
   REDIS_HOST: librenms-redis
   REDIS_PORT: "6379"
   REDIS_DB: "0"
+  RRDCACHED_SERVER: "rrdcached:42217"
