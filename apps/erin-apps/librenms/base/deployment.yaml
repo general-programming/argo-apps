@@ -47,3 +47,38 @@ spec:
       - name: librenms-data
         persistentVolumeClaim:
           claimName: librenms-data
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: librenms-dispatcher
+spec:
+  selector:
+    matchLabels:
+      app: librenms-dispatcher
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: librenms-dispatcher
+    spec:
+      dnsPolicy: Default
+      containers:
+      - name: librenms
+        image: librenms/librenms:latest
+        envFrom:
+        - configMapRef:
+            name: librenms-config
+        - secretRef:
+            name: librenms-secrets
+        env:
+        - name: SIDECAR_DISPATCHER
+          value: "1"
+        volumeMounts:
+        - name: librenms-data
+          mountPath: /data
+      volumes:
+      - name: librenms-data
+        persistentVolumeClaim:
+          claimName: librenms-data
+---
