@@ -30,7 +30,6 @@ spec:
       labels:
         app: librenms
     spec:
-      dnsPolicy: Default
       containers:
       - name: librenms
         image: librenms/librenms:latest
@@ -62,7 +61,6 @@ spec:
       labels:
         app: librenms-dispatcher
     spec:
-      dnsPolicy: Default
       containers:
       - name: librenms
         image: librenms/librenms:latest
