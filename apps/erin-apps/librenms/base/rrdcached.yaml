@@ -30,8 +30,12 @@ spec:
           volumeMounts:
             - name: data-volume
               mountPath: /data
-      volumes:
-        - name: data-volume
-          persistentVolumeClaim:
-            claimName: rrdcached-data
+      volumeClaimTemplates:
+        - metadata:
+            name: data-volume
+          spec:
+            accessModes: [ "ReadWriteOnce" ]
+            resources:
+              requests:
+                storage: 16Gi
             storageClassName: cephfs
