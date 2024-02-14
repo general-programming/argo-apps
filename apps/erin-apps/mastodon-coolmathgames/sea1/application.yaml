@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: mastodon-coolmathgames
     server: https://kubernetes.default.svc
-  project: infra
+  project: erin-apps
   source:
     chart: mastodon
     helm:
@@ -92,6 +92,10 @@ spec:
           #     address: "ADDMELATER"
 
           ingress:
+            annotations:
+              traefik.ingress.kubernetes.io/router.entrypoints: websecure
+              traefik.ingress.kubernetes.io/router.tls: "true"
+
             hosts:
               - host: coolmathgam.es
                 paths:
@@ -114,8 +118,8 @@ spec:
               hostname: replica.16-sea1.service.consul
               port: 5433
 
-    repoURL: https://helm.releases.hashicorp.com
-    targetRevision: 1.3.2
+    repoURL: https://github.com/mastodon/chart.git
+    targetRevision: d7dea06a2e7be89172ea16a96d2a32a394d0f63c
   syncPolicy:
     automated:
       prune: true
