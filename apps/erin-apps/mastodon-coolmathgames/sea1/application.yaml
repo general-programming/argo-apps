@@ -20,6 +20,13 @@ spec:
           tag: nightly.2024-02-14
         
         mastodon:
+          # streaming image
+          streaming:
+            image:
+              repository: ghcr.io/theessem/mastodon-streaming
+              tag: nightly.2024-02-14
+
+          # very IMPORTANT
           local_domain: coolmathgam.es
 
           # add extra vars
