@@ -118,6 +118,7 @@ spec:
               port: 5433
 
     repoURL: https://github.com/mastodon/chart.git
+    path: "."
     targetRevision: "d7dea06a2e7be89172ea16a96d2a32a394d0f63c"
   syncPolicy:
     automated:
