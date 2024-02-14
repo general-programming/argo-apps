@@ -119,6 +119,12 @@ spec:
         # TODO: elastic
         elasticsearch:
           enabled: false
+        
+        redis:
+          auth:
+            password: "this_is_insecure_but_it_is_redis_so_who_cares"
+          replica:
+            replicaCount: 2
           
         postgresql:
           enabled: false
