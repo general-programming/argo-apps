@@ -9,7 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: erin-apps
   source:
-    chart: mastodon
     helm:
       valuesObject:
         image:
