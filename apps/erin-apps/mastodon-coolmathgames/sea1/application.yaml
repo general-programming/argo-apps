@@ -20,11 +20,13 @@ spec:
           tag: nightly.2024-02-14
         
         mastodon:
-          # streaming image
+          # streaming config
           streaming:
             image:
               repository: ghcr.io/theessem/mastodon-streaming
               tag: nightly.2024-02-14
+            
+            replicas: 3
 
           # very IMPORTANT
           local_domain: coolmathgam.es
@@ -95,9 +97,6 @@ spec:
             # login + password set in vault
             existingSecret: mastodon-smtp
             from_address: automated@coolmathgam.es
-          
-          streaming:
-            replicas: 3
           
           web:
             replicas: 3
