@@ -111,7 +111,7 @@ spec:
         postgresql:
           enabled: false
           postgresqlHostname: primary.16-sea1.service.consul
-          postgresqlPort: 5433
+          postgresqlPort: "5433"
           auth:
             database: mastodon_coolmathgames
             username: mastodon_coolmathgames
@@ -119,7 +119,7 @@ spec:
             existingSecret: mastodon-postgres
           readReplica:
             hostname: replica.16-sea1.service.consul
-            port: 5433
+            port: "5433"
             auth:
               database: mastodon_coolmathgames
               username: mastodon_coolmathgames
