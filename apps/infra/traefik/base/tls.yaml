@@ -50,6 +50,19 @@ spec:
     - "e2.pm"
     - "*.e2.pm"
 ---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: crt-coolmathgames
+spec:
+  secretName: tls-coolmathgames
+  issuerRef: 
+    kind: ClusterIssuer
+    name: letsencrypt-genprog
+  dnsNames:
+    - "coolmathgam.es"
+    - "*.coolmathgam.es"
+---
 apiVersion: traefik.io/v1alpha1
 kind: TLSStore
 metadata:

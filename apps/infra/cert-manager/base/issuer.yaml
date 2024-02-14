@@ -16,6 +16,7 @@ spec:
           - "catgirls.dev"
           - "owo.me"
           - "e2.pm"
+          - "coolmathgam.es"
       dns01:
         cloudflare:
           apiTokenSecretRef:
