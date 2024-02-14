@@ -20,6 +20,8 @@ spec:
           tag: nightly.2024-02-14
         
         mastodon:
+          local_domain: coolmathgam.es
+
           # add SECRET_KEY_BASE, OTP_SECRET, VAPID_PRIVATE_KEY, VAPID_PUBLIC_KEY to vault
           secrets:
             existingSecret: mastodon-secrets
