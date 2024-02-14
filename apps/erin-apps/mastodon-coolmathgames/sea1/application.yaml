@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: erin-apps
   source:
-    repoURL: https://github.com/mastodon/chart.git
+    repoURL: https://github.com/general-programming/mastodon-chart.git
     path: "."
-    targetRevision: "d7dea06a2e7be89172ea16a96d2a32a394d0f63c"
+    targetRevision: "cf6d749506e2b94c3305bea9118e963680a0c0c7"
 
     helm:
       valuesObject:
