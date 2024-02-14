@@ -89,41 +89,41 @@ spec:
           web:
             replicas: 3
           
-          # TODO: metrics
-          # metrics:
-          #   statsd:
-          #     address: "ADDMELATER"
+        # TODO: metrics
+        # metrics:
+        #   statsd:
+        #     address: "ADDMELATER"
 
-          ingress:
-            annotations:
-              traefik.ingress.kubernetes.io/router.entrypoints: websecure
-              traefik.ingress.kubernetes.io/router.tls: "true"
+        ingress:
+          annotations:
+            traefik.ingress.kubernetes.io/router.entrypoints: websecure
+            traefik.ingress.kubernetes.io/router.tls: "true"
 
-            hosts:
-              - host: coolmathgam.es
-                paths:
-                  - path: "/"
+          hosts:
+            - host: coolmathgam.es
+              paths:
+                - path: "/"
 
-          # TODO: elastic
-          elasticsearch:
-            enabled: false
+        # TODO: elastic
+        elasticsearch:
+          enabled: false
           
-          postgresql:
-            enabled: false
-            postgresqlHostname: primary.16-sea1.service.consul
-            postgresqlPort: 5433
+        postgresql:
+          enabled: false
+          postgresqlHostname: primary.16-sea1.service.consul
+          postgresqlPort: 5433
+          auth:
+            database: mastodon_coolmathgames
+            username: mastodon_coolmathgames
+            # password in vault
+            existingSecret: mastodon-postgres
+          readReplica:
+            hostname: replica.16-sea1.service.consul
+            port: 5433
             auth:
               database: mastodon_coolmathgames
               username: mastodon_coolmathgames
-              # password in vault
               existingSecret: mastodon-postgres
-            readReplica:
-              hostname: replica.16-sea1.service.consul
-              port: 5433
-              auth:
-                database: mastodon_coolmathgames
-                username: mastodon_coolmathgames
-                existingSecret: mastodon-postgres
   syncPolicy:
     automated:
       prune: true
