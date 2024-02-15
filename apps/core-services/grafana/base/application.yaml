@@ -85,33 +85,22 @@ spec:
           server:
             domain: grafana.generalprogramming.org
             root_url: https://grafana.generalprogramming.org
-          auth.saml:
-            enabled: True
-            private_key_path: /etc/secrets/grafana_secrets/saml_private_key
-            public_key_path: /etc/secrets/grafana_secrets/saml_public_key
-            idp_metadata_url: https://genprog.cloudflareaccess.com/cdn-cgi/access/sso/saml/5128b7c3e1a468e7cd8fa10eab12daaf0028c3768694b96464ce00c37d5beffb/saml-metadata
-            assertion_attribute_name: GivenName
-            assertion_attribute_login: email
-            assertion_attribute_email: email
-            assertion_attribute_groups: groups
-          log:
-            filters: "saml.auth:debug"
-          # auth.generic_oauth:
-          #   enabled: true
-          #   name: General Programming SSO
-          #   allow_sign_up: true
-          #   client_id: $__file{/etc/secrets/grafana_secrets/oauth_client_id}
-          #   client_secret: $__file{/etc/secrets/grafana_secrets/oauth_client_secret}
-          #   scopes: openid email profile offline_access roles
-          #   email_attribute_path: email
-          #   login_attribute_path: username
-          #   name_attribute_path: name
-          #   groups_attribute_path: groups
-          #   auth_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/auth
-          #   token_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/token
-          #   api_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/userinfo
-          #   role_attribute_path: "contains(groups[*], 'superadmin') && 'GrafanaAdmin' || contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'"
-          #   allow_assign_grafana_admin: true
+          auth.generic_oauth:
+            enabled: true
+            name: General Programming SSO
+            allow_sign_up: true
+            client_id: $__file{/etc/secrets/grafana_secrets/oauth_client_id}
+            client_secret: $__file{/etc/secrets/grafana_secrets/oauth_client_secret}
+            scopes: openid email profile offline_access roles
+            email_attribute_path: email
+            login_attribute_path: username
+            name_attribute_path: name
+            groups_attribute_path: groups
+            auth_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/auth
+            token_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/token
+            api_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/userinfo
+            role_attribute_path: "contains(groups[*], 'superadmin') && 'GrafanaAdmin' || contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'"
+            allow_assign_grafana_admin: true
         sidecar:
           datasources:
             enabled: true
