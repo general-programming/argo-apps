@@ -108,10 +108,10 @@ spec:
             assetsPrecompile:
               enabled: false
 
-        metrics:
-          statsd:
-            exporter:
-              enabled: true
+          metrics:
+            statsd:
+              exporter:
+                enabled: true
 
         ingress:
           annotations:
