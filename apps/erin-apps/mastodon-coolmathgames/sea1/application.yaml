@@ -108,10 +108,10 @@ spec:
             assetsPrecompile:
               enabled: false
 
-        # TODO: metrics
-        # metrics:
-        #   statsd:
-        #     address: "ADDMELATER"
+        metrics:
+          statsd:
+            exporter:
+              enabled: true
 
         ingress:
           annotations:
