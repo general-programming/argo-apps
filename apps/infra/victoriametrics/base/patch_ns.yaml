@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: victoriametrics
+  name: monitoring-system
   labels:
     kubernetes.io/metadata.name: victoriametrics
     pod-security.kubernetes.io/enforce: privileged
