@@ -1,5 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: victoriametrics
 resources:
   - github.com/VictoriaMetrics/operator/config/default?ref=v0.41.1
   - agent_scrape_pod.yaml
@@ -7,3 +8,5 @@ resources:
 images:
 - name: victoriametrics/operator
   newTag: v0.41.0
+patches:
+  - path: patch_ns.yaml
