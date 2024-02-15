@@ -39,13 +39,6 @@ spec:
           secrets:
             existingSecret: mastodon-secrets
 
-          # asset config
-          persistence:
-            assets:
-              accessMode: ReadWriteMany
-            system:
-              accessMode: ReadWriteMany
-
           # storage config
           s3:
             enabled: true
@@ -109,6 +102,12 @@ spec:
           web:
             replicas: 3
           
+          hooks:
+            dbMigrate:
+              enabled: true
+            assetsPrecompile:
+              enabled: false
+
         # TODO: metrics
         # metrics:
         #   statsd:
