@@ -10,7 +10,6 @@ resources:
   - external-dns.yaml
   - grafana-operator.yaml
   - reloader.yaml
-  - victoriametrics.yaml
 
   # apps
   - registry.yaml
