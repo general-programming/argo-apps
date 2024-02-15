@@ -22,6 +22,7 @@ spec:
             - --source=ingress
             - --provider=cloudflare
             - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
+            - --policy=upsert-only
           env:
           - name: CF_API_TOKEN
             valueFrom:
