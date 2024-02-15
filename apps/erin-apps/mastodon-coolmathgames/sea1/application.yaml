@@ -143,13 +143,13 @@ spec:
             username: mastodon_coolmathgames
             # password in vault
             existingSecret: mastodon-postgres
-          readReplica:
-            hostname: replica.16-sea1.service.consul
-            port: 5433
-            auth:
-              database: mastodon_coolmathgames
-              username: mastodon_coolmathgames
-              existingSecret: mastodon-postgres
+          # readReplica:
+          #   hostname: replica.16-sea1.service.consul
+          #   port: 5433
+          #   auth:
+          #     database: mastodon_coolmathgames
+          #     username: mastodon_coolmathgames
+          #     existingSecret: mastodon-postgres
   syncPolicy:
     automated:
       prune: true
