@@ -2,6 +2,7 @@ apiVersion: operator.victoriametrics.com/v1beta1
 kind: VMAgent
 metadata:
   name: vmagent
+  namespace: victoriametrics
 spec:
   selectAllByDefault: true
   replicaCount: 1

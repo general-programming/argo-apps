@@ -4,7 +4,6 @@ resources:
   - github.com/VictoriaMetrics/operator/config/default?ref=v0.41.1
   - agent_scrape_pod.yaml
   - agent_scrape_service.yaml
-namespace: victoriametrics
 images:
 - name: victoriametrics/operator
   newTag: v0.41.0
