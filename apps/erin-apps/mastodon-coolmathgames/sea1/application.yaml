@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/general-programming/mastodon-chart.git
     path: "."
-    targetRevision: "b15d6a004fe9089df759eca29a921f221a0db340"
+    targetRevision: "9cad0299fbccce0f790a9a13c642627becd74281"
 
     helm:
       valuesObject:
