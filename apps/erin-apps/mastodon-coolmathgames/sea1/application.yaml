@@ -39,6 +39,14 @@ spec:
           secrets:
             existingSecret: mastodon-secrets
 
+          # asset config
+          persistence:
+            assets:
+              accessMode: ReadWriteMany
+            system:
+              accessMode: ReadWriteMany
+
+          # storage config
           s3:
             enabled: true
             # add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to vault
