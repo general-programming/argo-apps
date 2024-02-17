@@ -16,7 +16,7 @@ spec:
           trace:
             backend: s3
             s3:
-              endpoint: http://10.65.67.100
+              endpoint: "10.65.67.100"
               access_key: ${S3_ACCESS_KEY}
               secret_key: ${S3_SECRET_KEY}
               bucket: tempo
