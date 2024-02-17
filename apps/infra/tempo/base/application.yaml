@@ -51,6 +51,8 @@ spec:
               external-dns.alpha.kubernetes.io/hostname: tempo.fmt2.generalprogramming.org
 
         querier:
+          replicas: 1
+
           extraArgs:
             - '-config.expand-env=true'
           extraEnv:
@@ -66,6 +68,8 @@ spec:
                   key: s3_secret_key
 
         compactor:
+          replicas: 1
+
           extraArgs:
             - '-config.expand-env=true'
           extraEnv:
@@ -81,6 +85,8 @@ spec:
                   key: s3_secret_key
 
         distributor:
+          replicas: 2
+
           extraArgs:
             - '-config.expand-env=true'
           extraEnv:
@@ -96,6 +102,8 @@ spec:
                   key: s3_secret_key
 
         ingester:
+          replicas: 3
+
           extraArgs:
             - '-config.expand-env=true'
           extraEnv:
@@ -111,6 +119,8 @@ spec:
                   key: s3_secret_key
 
         queryFrontend:
+          replicas: 1
+
           extraArgs:
             - '-config.expand-env=true'
           extraEnv:
