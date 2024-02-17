@@ -43,6 +43,8 @@ spec:
 
         gateway:
           enabled: true
+          nginxConfig:
+            resolver: "10.96.0.10"
           service:
             type: LoadBalancer
             annotations:
