@@ -107,6 +107,22 @@ spec:
                 secretKeyRef:
                   name: tempo-secrets
                   key: s3_secret_key
+
+        queryFrontend:
+          extraArgs:
+            - '-config.expand-env=true'
+          extraEnv:
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: tempo-secrets
+                  key: s3_access_key
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: tempo-secrets
+                  key: s3_secret_key
+
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: v1.8.4
   syncPolicy:
