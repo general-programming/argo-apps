@@ -42,6 +42,7 @@ spec:
           clusterDomain: "generalprogramming.org"
 
         gateway:
+          enabled: true
           service:
             type: LoadBalancer
             annotations:
