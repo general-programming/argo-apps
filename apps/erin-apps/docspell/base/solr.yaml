@@ -23,7 +23,7 @@ spec:
           command:
             - bash
             - -c
-            - 'precreate-core docspell; exec solr -f -Dsolr.modules=analysis-extras'
+            - 'precreate-core docspell; exec solr -f -Dsolr.modules=analysis-extras -v -V'
           livenessProbe: # Check for a 302 response
             httpGet:
               path: /solr/admin/info/system
