@@ -24,6 +24,9 @@ spec:
             - bash
             - -c
             - 'precreate-core docspell; exec solr -f -Dsolr.modules=analysis-extras -v -V'
+          env:
+            - name: SOLR_PORT
+              value: "8983"
           livenessProbe: # Check for a 302 response
             httpGet:
               path: /solr/admin/info/system
