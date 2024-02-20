@@ -16,6 +16,7 @@ resources:
   - registry.yaml
   - grafana.yaml
   - librenms.yaml
+  - docspell.yaml
 
   # users
   - erin/

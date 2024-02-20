@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docspell-joex
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: docspell-joex
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: docspell-joex
+    spec:
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
+      containers:
+      - name: docspell-joex
+        image: docspell/joex:latest
+        envFrom:
+        - configMapRef:
+            name: docspell-config
+        - secretRef:
+            name: docspell-secrets

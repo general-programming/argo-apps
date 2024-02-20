@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docspell-restserver
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: docspell-restserver
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: docspell-restserver
+    spec:
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
+      containers:
+      - name: docspell-restserver
+        image: docspell/restserver:latest
+        envFrom:
+        - configMapRef:
+            name: docspell-config
+        - secretRef:
+            name: docspell-secrets
