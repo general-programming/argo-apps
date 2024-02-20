@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: librenms-config
+  name: docspell-config
 data:
   # General
   TZ: "America/Los_Angeles"

@@ -21,9 +21,9 @@ spec:
           ports:
             - containerPort: 8983
           command:
-            - docker-entrypoint.sh
-            - solr-precreate
-            - docspell
+            - bash
+            - -c
+            - 'precreate-core docspell; exec solr -f -Dsolr.modules=analysis-extras'
           livenessProbe: # Check for a 302 response
             httpGet:
               path: /solr/admin/info/system
