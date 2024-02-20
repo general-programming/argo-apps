@@ -20,7 +20,7 @@ spec:
             value: "2"
       containers:
       - name: docspell-restserver
-        image: docspell/restserver:latest
+        image: docspell/restserver:nightly
         envFrom:
         - configMapRef:
             name: docspell-config
