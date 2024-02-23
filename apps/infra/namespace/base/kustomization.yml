@@ -11,6 +11,7 @@ resources:
   - grafana-operator.yaml
   - reloader.yaml
   - tempo.yaml
+  - bsky-pds.yaml
 
   # apps
   - registry.yaml
