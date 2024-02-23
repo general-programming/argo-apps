@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: pds-config
 data:
-  PDS_HOSTNAME: "atproto-pds.owo.me"
+  PDS_HOSTNAME: "owo.me"
 
