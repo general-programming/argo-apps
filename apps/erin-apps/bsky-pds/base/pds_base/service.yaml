@@ -9,7 +9,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 3000
+    targetPort: 2583
     name: http
   selector:
     app: pds
