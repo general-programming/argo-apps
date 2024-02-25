@@ -17,6 +17,11 @@ spec:
         loki:
           auth_enabled: false
 
+          # rate limits
+          limits_config:
+            ingestion_rate_mb: 10
+            ingestion_burst_size_mb: 15
+
           storage:
             type: s3
             s3:
