@@ -4,6 +4,7 @@ resources:
   - argocd.yaml
   - ceph.yaml
   - loki.yaml
+  - promtail.yaml
   - traefik.yaml
   - consul.yaml
   - vault.yaml

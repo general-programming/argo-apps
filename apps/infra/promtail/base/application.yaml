@@ -1,0 +1,49 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: promtail-helm
+  namespace: argocd
+spec:
+  destination:
+    namespace: promtail
+    server: https://kubernetes.default.svc
+  project: infra
+  source:
+    chart: promtail
+    helm:
+      valuesObject:
+        extraArgs:
+          - -config.expand-env
+
+        containerSecurityContext:
+          capabilities:
+            add:
+              - DAC_READ_SEARCH
+
+        extraVolumes:
+          - name: audit-logs
+            hostPath:
+              path: /var/log/audit/kube
+        extraVolumeMounts:
+          - name: audit-logs
+            mountPath: /var/log/audit/kube
+            readOnly: true
+  
+        config:
+          clients:
+            - url: http://loki.fmt2.generalprogramming.org/loki/api/v1/push
+          snippets:
+            extraScrapeConfigs: |
+              - job_name: auditlogs
+                static_configs:
+                  - targets:
+                      - localhost
+                    labels:
+                      job: auditlogs
+                      host: ${HOSTNAME}
+                      __path__: /var/log/audit/kube/*.log    
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: v6.15.5
+  syncPolicy:
+    automated:
+      prune: true
