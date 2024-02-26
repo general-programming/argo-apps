@@ -141,6 +141,7 @@ spec:
           
           ingest:
             enabled: false
+            replicaCount: 0
           
         postgresql:
           enabled: false
