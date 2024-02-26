@@ -130,10 +130,10 @@ spec:
             replicaCount: 3
         
         elasticsearch:
-          nameOverride: "cmg-fedi-es"
-          fullnameOverride: "cmg-fedi-es"
+          # nameOverride: "cmg-fedi-es"
+          # fullnameOverride: "cmg-fedi-es"
 
-          hostname: cmg-fedi-es-master-hl
+          # hostname: cmg-fedi-es-master-hl
 
           master:
             extraRoles:
