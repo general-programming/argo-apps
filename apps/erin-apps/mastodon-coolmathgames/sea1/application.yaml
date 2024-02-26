@@ -27,11 +27,6 @@ spec:
               tag: nightly.2024-02-26
             
             replicas: 3
-          
-          elasticsearch:
-            # lol https://github.com/mastodon/chart/blob/28728a8760fb1c2fcea6a39c86a0871b7fba4bdc/templates/configmap-env.yaml#L38C25-L38C56
-            fullname: cmg-fedi-es
-            fullhostname: cmg-fedi-es-master-hl
 
           # very IMPORTANT
           local_domain: coolmathgam.es
@@ -137,6 +132,8 @@ spec:
         elasticsearch:
           nameOverride: "cmg-fedi-es"
           fullnameOverride: "cmg-fedi-es"
+
+          hostname: cmg-fedi-es-master-hl
 
           master:
             extraRoles:
