@@ -10,6 +10,9 @@ spec:
   - honorLabels: true
     port: http-metrics
   jobLabel: app.kubernetes.io/name
+  namespaceSelector:
+    matchNames:
+    - kube-system
   selector:
     matchLabels:
       app.kubernetes.io/name: kube-state-metrics
