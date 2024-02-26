@@ -130,7 +130,7 @@ spec:
             replicaCount: 3
         
         elasticsearch:
-          fullnameOverride: "es"
+          nameOverride: "es"
 
           master:
             extraRoles:
