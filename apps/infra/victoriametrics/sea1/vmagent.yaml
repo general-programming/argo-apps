@@ -6,7 +6,7 @@ metadata:
 spec:
   selectAllByDefault: true
   replicaCount: 1
-  relabelConfig:
+  inlineRelabelConfig:
     - target_label: "dc"
       replacement: "sea1"
   remoteWrite:
