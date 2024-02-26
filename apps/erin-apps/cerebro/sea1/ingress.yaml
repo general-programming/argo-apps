@@ -16,7 +16,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: cerebro
+                name: cerebro-http
                 port:
                   number: 80
 ---
