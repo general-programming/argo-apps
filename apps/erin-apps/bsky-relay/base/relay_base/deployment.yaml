@@ -42,12 +42,13 @@ spec:
         #   requests:
         #     cpu: "4000m"
         #     memory: "8Gi"
+        ports:
+        - containerPort: 2470
+          name: http
+        - containerPort: 2471
+          name: metrics
+
       volumes:
       - name: relay-data
         persistentVolumeClaim:
           claimName: relay-data
-      ports:
-      - containerPort: 2470
-        name: http
-      - containerPort: 2471
-        name: metrics
