@@ -6,6 +6,7 @@ resources:
   - agent_scrape_pod.yaml
   - agent_scrape_service.yaml
   - agent_scrape_state_metrics.yaml
+  - agent_scrape_kubelet.yaml
 patches:
   - path: patch_ns.yaml
 images:
