@@ -131,6 +131,16 @@ spec:
         
         elasticsearch:
           fullnameOverride: "es"
+
+          master:
+            extraRoles:
+              - coordinator
+
+          coordinating:
+            replicaCount: 0
+          
+          ingest:
+            enabled: false
           
         postgresql:
           enabled: false
