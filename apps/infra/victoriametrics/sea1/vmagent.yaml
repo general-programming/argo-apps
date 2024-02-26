@@ -6,5 +6,8 @@ metadata:
 spec:
   selectAllByDefault: true
   replicaCount: 1
+  relabelConfig:
+  - target_label: "dc"
+    replacement: "sea1"
   remoteWrite:
     - url: "http://vminsert.fmt2.generalprogramming.org:8480/insert/0/prometheus/api/v1/write"
