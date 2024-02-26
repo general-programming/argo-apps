@@ -7,6 +7,7 @@ resources:
   - agent_scrape_service.yaml
   - agent_scrape_state_metrics.yaml
   - agent_scrape_kubelet.yaml
+  - agent_scrape_node_exporter.yaml
 patches:
   - path: patch_ns.yaml
 images:

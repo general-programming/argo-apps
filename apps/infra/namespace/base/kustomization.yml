@@ -13,6 +13,7 @@ resources:
   - reloader.yaml
   - tempo.yaml
   - kube-state-metrics.yaml
+  - monitoring.yaml
 
   # apps
   - registry.yaml
