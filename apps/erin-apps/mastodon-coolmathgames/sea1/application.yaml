@@ -122,10 +122,6 @@ spec:
             - host: coolmathgam.es
               paths:
                 - path: "/"
-
-        # TODO: elastic
-        elasticsearch:
-          enabled: false
         
         redis:
           auth:
