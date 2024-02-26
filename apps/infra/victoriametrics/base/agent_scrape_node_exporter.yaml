@@ -1,7 +1,7 @@
 apiVersion: operator.victoriametrics.com/v1beta1
 kind: VMServiceScrape
 metadata:
-  name: kube-state-metrics
+  name: node-exporter
   namespace: victoriametrics
   labels:
     app.kubernetes.io/name: node-exporter
