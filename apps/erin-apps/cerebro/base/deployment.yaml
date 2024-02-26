@@ -15,3 +15,6 @@ spec:
       containers:
       - name: cerebro
         image: ghcr.io/general-programming/cerebro:main
+      env:
+      - name: "CEREBRO_PORT"
+        value: "9000"
