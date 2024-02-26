@@ -12,13 +12,14 @@ resources:
   - grafana-operator.yaml
   - reloader.yaml
   - tempo.yaml
-  - bsky-pds.yaml
 
   # apps
   - registry.yaml
   - grafana.yaml
   - librenms.yaml
   - docspell.yaml
+  - bsky-pds.yaml
+  - bsky-relay.yaml
 
   # users
   - erin/

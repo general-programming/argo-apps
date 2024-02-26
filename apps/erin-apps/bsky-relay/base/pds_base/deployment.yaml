@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: relay
+  labels:
+    app.kubernetes.io/component: atproto-relay
+    app.kubernetes.io/name: atproto
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: relay
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: relay
+    spec:
+      containers:
+      - name: relay
+        image: ghcr.io/general-programming/megarepo/bigsky:latest
+        envFrom:
+        - configMapRef:
+            name: relay-config
+        - secretRef:
+            name: relay-secrets
+        # I assume that shared data may become possible eventually.
+        volumeMounts:
+        - name: relay-data
+          mountPath: /data
+        # Based on the server requirements on the normal server.
+        # resources:
+        #   limits:
+        #     cpu: "4000m"
+        #     memory: "8Gi"
+        #   requests:
+        #     cpu: "4000m"
+        #     memory: "8Gi"
+      volumes:
+      - name: relay-data
+        persistentVolumeClaim:
+          claimName: relay-data
