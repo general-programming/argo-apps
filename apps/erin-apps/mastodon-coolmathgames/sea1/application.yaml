@@ -130,8 +130,7 @@ spec:
             replicaCount: 3
         
         elasticsearch:
-          global:
-            fullnameOverride: "es"
+          fullnameOverride: "es"
           
         postgresql:
           enabled: false
