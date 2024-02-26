@@ -9,5 +9,7 @@ spec:
   inlineRelabelConfig:
     - target_label: "dc"
       replacement: "sea1"
+    - target_label: "cluster"
+      replacement: "sea1-k8s"
   remoteWrite:
     - url: "http://vminsert.fmt2.generalprogramming.org:8480/insert/0/prometheus/api/v1/write"

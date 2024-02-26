@@ -9,5 +9,7 @@ spec:
   inlineRelabelConfig:
     - target_label: "dc"
       replacement: "fmt2"
+    - target_label: "cluster"
+      replacement: "fmt2-k8s"
   remoteWrite:
     - url: "http://vminsert-fmt2-victoriametrics.victoriametrics.svc.generalprogramming.org:8480/insert/0/prometheus/api/v1/write"
