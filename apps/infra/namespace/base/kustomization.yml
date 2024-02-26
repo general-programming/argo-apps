@@ -12,6 +12,7 @@ resources:
   - grafana-operator.yaml
   - reloader.yaml
   - tempo.yaml
+  - kube-state-metrics.yaml
 
   # apps
   - registry.yaml
