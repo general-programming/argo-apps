@@ -14,4 +14,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: node-exporter
-  namespace: node-exporter
+  namespace: monitoring
+- kind: ServiceAccount
+  name: vmagent-vmagent
+  namespace: victoriametrics

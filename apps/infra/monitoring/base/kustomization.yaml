@@ -9,3 +9,5 @@ resources:
 - upstream_node_exporter/nodeExporter-service.yaml
 - upstream_node_exporter/nodeExporter-serviceAccount.yaml
 # - upstream_node_exporter/nodeExporter-serviceMonitor.yaml
+patches:
+  - path: patch_nodeexporter_sa.yaml
