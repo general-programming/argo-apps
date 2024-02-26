@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: pds-config
+  name: relay-config
 data:
   PDS_HOSTNAME: "owo.me"
 
