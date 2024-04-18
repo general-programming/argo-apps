@@ -23,6 +23,13 @@ spec:
         ports:
         - containerPort: 8112
           name: http
+        - containerPort: 6881
+          hostPort: 6881
+          name: torrent-tcp
+        - containerPort: 6881
+          hostPort: 6881
+          protocol: UDP
+          name: torrent-udp
         volumeMounts:
         - name: deluge-data
           mountPath: /downloads
