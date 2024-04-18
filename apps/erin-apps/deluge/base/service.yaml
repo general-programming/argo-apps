@@ -26,7 +26,7 @@ spec:
     targetPort: 30888
     nodePort: 30888
     protocol: UDP
-    name: torrent-tcp
+    name: torrent-udp
   selector:
     app: deluge
   type: NodePort
