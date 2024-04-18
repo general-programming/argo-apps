@@ -17,14 +17,14 @@ metadata:
   name: deluge-nodeport
 spec:
   ports:
-  - port: 6881
-    targetPort: 6881
-    nodePort: 6881
+  - port: 30888
+    targetPort: 30888
+    nodePort: 30888
     protocol: TCP
     name: torrent-tcp
-  - port: 6881
-    targetPort: 6881
-    nodePort: 6881
+  - port: 30888
+    targetPort: 30888
+    nodePort: 30888
     protocol: UDP
     name: torrent-tcp
   selector:

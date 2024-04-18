@@ -23,9 +23,9 @@ spec:
         ports:
         - containerPort: 8112
           name: http
-        - containerPort: 6881
+        - containerPort: 30888
           name: torrent-tcp
-        - containerPort: 6881
+        - containerPort: 30888
           protocol: UDP
           name: torrent-udp
         volumeMounts:
