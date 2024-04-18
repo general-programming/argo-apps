@@ -10,3 +10,23 @@ spec:
   selector:
     app: deluge
   type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deluge-nodeport
+spec:
+  ports:
+  - port: 6881
+    targetPort: 6881
+    nodePort: 6881
+    protocol: TCP
+    name: torrent-tcp
+  - port: 6881
+    targetPort: 6881
+    nodePort: 6881
+    protocol: UDP
+    name: torrent-tcp
+  selector:
+    app: deluge
+  type: NodePort
