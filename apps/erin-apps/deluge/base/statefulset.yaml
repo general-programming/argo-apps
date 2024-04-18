@@ -1,0 +1,48 @@
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: deluge
+spec:
+  selector:
+    matchLabels:
+      app: deluge
+  serviceName: "deluge"
+  replicas: 1
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: deluge
+    spec:
+      terminationGracePeriodSeconds: 10
+      restartPolicy: Always
+      containers:
+      - name: deluge
+        image: lscr.io/linuxserver/deluge:latest
+        ports:
+        - containerPort: 8112
+          name: http
+        volumeMounts:
+        - name: deluge-data
+          mountPath: /downloads
+        - name: deluge-config
+          mountPath: /config
+      dnsPolicy: Default
+  volumeClaimTemplates:
+  - metadata:
+      name: deluge-data
+    spec:
+      storageClassName: cephfs
+      accessModes: ["ReadWriteMany"]
+      resources:
+        requests:
+          storage: 512Gi
+  - metadata:
+      name: deluge-config
+    spec:
+      storageClassName: cephfs
+      accessModes: ["ReadWriteMany"]
+      resources:
+        requests:
+          storage: 8Gi

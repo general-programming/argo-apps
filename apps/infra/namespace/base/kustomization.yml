@@ -23,6 +23,7 @@ resources:
   - bsky-pds.yaml
   - bsky-relay.yaml
   - cerebro.yaml
+  - deluge.yaml
 
   # users
   - erin/
