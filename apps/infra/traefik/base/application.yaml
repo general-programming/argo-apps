@@ -25,6 +25,10 @@ spec:
             hostPort: 443
         dashboard:
           enabled: false
+        logs:
+          access:
+            enabled: true
+            format: json
         additionalArguments:
           - "--providers.kubernetesingress.ingressendpoint.publishedservice=traefik/traefik-helm"
     repoURL: https://traefik.github.io/charts
