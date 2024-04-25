@@ -122,6 +122,11 @@ spec:
             - host: coolmathgam.es
               paths:
                 - path: "/"
+          
+          tls: null
+
+          streaming:
+            tls: null
         
         redis:
           auth:
