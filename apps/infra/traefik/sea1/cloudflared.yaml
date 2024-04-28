@@ -13,6 +13,9 @@ spec:
       labels:
         app: cloudflared
       annotations:
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '2000'
         reloader.stakater.com/auto: "true"
     spec:
       containers:
@@ -45,6 +48,9 @@ spec:
         - name: creds
           mountPath: /etc/cloudflared/creds
           readOnly: true
+        ports:
+        - containerPort: 2000
+          name: http
       volumes:
       - name: creds
         secret:
