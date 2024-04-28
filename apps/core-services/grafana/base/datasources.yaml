@@ -25,7 +25,7 @@ stringData:
       type: loki
       access: proxy
       orgId: 1
-      url: http://loki-gateway.loki.svc.generalprogramming.org
+      url: http://loki-helm-gateway.loki.svc.generalprogramming.org
       editable: false
     - name: Tempo-FMT2
       type: tempo
