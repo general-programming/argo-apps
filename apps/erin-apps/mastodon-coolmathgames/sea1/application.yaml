@@ -17,14 +17,14 @@ spec:
       valuesObject:
         image:
           repository: ghcr.io/theessem/mastodon
-          tag: nightly.2024-04-24
+          tag: nightly.2024-04-28
         
         mastodon:
           # streaming config
           streaming:
             image:
               repository: ghcr.io/theessem/mastodon-streaming
-              tag: nightly.2024-04-24
+              tag: nightly.2024-04-28
             
             replicas: 3
 
