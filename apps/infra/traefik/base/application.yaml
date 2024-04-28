@@ -18,11 +18,6 @@ spec:
           kind: DaemonSet
           updateStrategy:
             type: RollingUpdate
-        ports:
-          web:
-            hostPort: 80
-          websecure:
-            hostPort: 443
         dashboard:
           enabled: false
         logs:
