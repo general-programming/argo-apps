@@ -98,5 +98,5 @@ data:
     ingress:
     - service: https://traefik-helm:443
       originRequest:
-        noTLSVerify: true
+        matchSNItoHost: true
         http2Origin: true
