@@ -91,3 +91,5 @@ data:
     # E.g. `cloudflared tunnel route dns example-tunnel tunnel.example.com`.
     ingress:
     - service: https://traefik-helm:443
+      originRequest:
+        noTLSVerify: true
