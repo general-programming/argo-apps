@@ -7,7 +7,7 @@ spec:
   project: infra
   source:
     repoURL: 'https://charts.rook.io/release'
-    targetRevision: v1.13.7
+    targetRevision: v1.14.2
     chart: rook-ceph
   destination:
     server: 'https://kubernetes.default.svc'
