@@ -8,5 +8,7 @@ spec:
     helm:
       valuesObject:
         service:
-          type: ClusterIP
+          annotations:
+            metallb.universe.tf/address-pool: fmt2-pool-external
+            metallb.universe.tf/allow-shared-ip: external
 ---
