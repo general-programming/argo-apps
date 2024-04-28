@@ -16,19 +16,19 @@ loki:
   
   schemaConfig:
     configs:
-      - from: 2024-04-28
-        store: tsdb
-        object_store: {{ .Values.loki.storage.type }}
-        schema: v13
-        index:
-          prefix: loki_v13_index_
-          period: 24h
       - from: 2023-08-01
         store: tsdb
         object_store: {{ .Values.loki.storage.type }}
         schema: v12
         index:
           prefix: loki_index_
+          period: 24h
+      - from: 2024-04-28
+        store: tsdb
+        object_store: {{ .Values.loki.storage.type }}
+        schema: v13
+        index:
+          prefix: loki_v13_index_
           period: 24h
 
   gateway:
