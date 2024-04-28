@@ -93,3 +93,4 @@ data:
     - service: https://traefik-helm:443
       originRequest:
         noTLSVerify: true
+        http2Origin: true
