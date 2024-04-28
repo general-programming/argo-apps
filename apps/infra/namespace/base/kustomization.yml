@@ -16,7 +16,6 @@ resources:
   - monitoring.yaml
 
   # apps
-  - registry.yaml
   - grafana.yaml
   - librenms.yaml
   - docspell.yaml
