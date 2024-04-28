@@ -74,5 +74,6 @@ spec:
     - secretName: tls-catgirls
     - secretName: tls-owo
     - secretName: tls-e2pm
+    - secretName: tls-coolmathgames
   defaultCertificate:
     secretName: tls-generalprogramming
