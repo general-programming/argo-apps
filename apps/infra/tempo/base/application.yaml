@@ -38,9 +38,6 @@ spec:
           opencensus:
             enabled: false
 
-        global:
-          clusterDomain: "generalprogramming.org"
-
         gateway:
           enabled: true
           image:
