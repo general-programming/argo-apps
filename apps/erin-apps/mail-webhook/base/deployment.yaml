@@ -32,4 +32,4 @@ spec:
               name: mail-webhook-secrets
               key: auth_key
         - name: RENDER_ENDPOINT
-          value: http://html-render-server.erin-html-render-server.svc.generalprogramming.org
+          value: http://html-render-server.erin-html-render-server.svc.cluster.local

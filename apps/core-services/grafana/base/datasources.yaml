@@ -13,7 +13,7 @@ stringData:
       type: prometheus
       access: proxy
       orgId: 1
-      url: http://vmselect-fmt2-victoriametrics-additional-service.victoriametrics.svc.generalprogramming.org:8481/select/0/prometheus
+      url: http://vmselect-fmt2-victoriametrics-additional-service.victoriametrics.svc.cluster.local:8481/select/0/prometheus
       editable: false
     - name: VM-OCI
       type: prometheus
@@ -25,11 +25,11 @@ stringData:
       type: loki
       access: proxy
       orgId: 1
-      url: http://loki-helm-gateway.loki.svc.generalprogramming.org
+      url: http://loki-helm-gateway.loki.svc.cluster.local
       editable: false
     - name: Tempo-FMT2
       type: tempo
       access: proxy
       orgId: 1
-      url: http://tempo-helm-gateway.tempo.svc.generalprogramming.org
+      url: http://tempo-helm-gateway.tempo.svc.cluster.local
       editable: false
