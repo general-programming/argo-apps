@@ -135,14 +135,17 @@ spec:
             replicaCount: 3
         
         elasticsearch:
-          # nameOverride: "cmg-fedi-es"
-          # fullnameOverride: "cmg-fedi-es"
-
-          # hostname: cmg-fedi-es-master-hl
+          preset: small_cluster
 
           master:
+            replicaCount: 3
+            heapSize: 1024m
             extraRoles:
               - coordinator
+          
+          data:
+            replicaCount: 3
+            heapSize: 1024m
 
           coordinating:
             replicaCount: 0
