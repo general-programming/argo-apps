@@ -20,6 +20,13 @@ spec:
       containers:
       - name: deluge
         image: lscr.io/linuxserver/deluge:latest
+        resources:
+          limits:
+            cpu: "2"
+            memory: "2Gi"
+          requests:
+            cpu: "2"
+            memory: "2Gi"
         ports:
         - containerPort: 8112
           name: http
