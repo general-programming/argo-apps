@@ -137,6 +137,9 @@ spec:
         elasticsearch:
           preset: small_cluster
 
+          metrics:
+            enabled: true
+
           master:
             replicaCount: 3
             heapSize: 1g
