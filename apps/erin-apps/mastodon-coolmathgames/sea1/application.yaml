@@ -104,7 +104,7 @@ spec:
           
           hooks:
             dbMigrate:
-              enabled: true
+              enabled: false
             assetsPrecompile:
               enabled: false
 
