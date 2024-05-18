@@ -140,8 +140,6 @@ spec:
           master:
             replicaCount: 3
             heapSize: 1g
-            extraRoles:
-              - coordinator
           
           data:
             replicaCount: 3
