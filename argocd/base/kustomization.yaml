@@ -9,3 +9,4 @@ patches:
       kind: ConfigMap
       name: argocd-rbac-cm
   - path: patch_ha.yaml
+  - path: patch_healthchecks.yaml
