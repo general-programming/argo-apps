@@ -129,18 +129,16 @@ spec:
             tls: null
         
         redis:
-          enabled: false
           auth:
             password: "this_is_insecure_but_it_is_redis_so_who_cares"
           replica:
             replicaCount: 3
         
         elasticsearch:
-          enabled: false
           preset: small_cluster
 
           metrics:
-            enabled: false
+            enabled: true
 
           master:
             replicaCount: 3
