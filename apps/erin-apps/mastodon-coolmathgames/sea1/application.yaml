@@ -129,8 +129,12 @@ spec:
             tls: null
         
         redis:
+          volumePermissions:
+            enabled: true
+
           auth:
             password: "this_is_insecure_but_it_is_redis_so_who_cares"
+
           replica:
             replicaCount: 3
         
