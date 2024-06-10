@@ -43,7 +43,7 @@ spec:
                       host: ${HOSTNAME}
                       __path__: /var/log/audit/kube/*.log    
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: v6.15.5
+    targetRevision: 6.16.0
   syncPolicy:
     automated:
       prune: true
