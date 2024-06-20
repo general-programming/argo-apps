@@ -18,7 +18,7 @@ spec:
         image:
           repository: ghcr.io/theessem/mastodon
           # renovate: datasource=docker depName=ghcr.io/theessem/mastodon
-          tag: nightly.2024-06-01
+          tag: nightly.2024-06-20
         
         mastodon:
           # streaming config
@@ -26,7 +26,7 @@ spec:
             image:
               repository: ghcr.io/theessem/mastodon-streaming
               # renovate: datasource=docker depName=ghcr.io/theessem/mastodon-streaming
-              tag: nightly.2024-06-01
+              tag: nightly.2024-06-20
             
             replicas: 3
 
