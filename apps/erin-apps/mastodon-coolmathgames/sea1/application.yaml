@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: mastodon-coolmathgames-helm
   namespace: argocd
+  annotations:
+      argocd.argoproj.io/sync-options: ApplyOnly=true
 spec:
   destination:
     namespace: mastodon-coolmathgames
@@ -178,10 +180,10 @@ spec:
           #     username: mastodon_coolmathgames
           #     existingSecret: mastodon-postgres
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: true
-    syncOptions:
-      - allowEmpty=true
-      - ServerSideApply=true
+    syncPolicy:
+      syncOptions:
+        - ApplyOutOfSyncOnly=true
+        - allowEmpty=true
+        - ServerSideApply=true
+    automated: {}
+      
