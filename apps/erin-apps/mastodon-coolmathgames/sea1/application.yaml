@@ -182,7 +182,5 @@ spec:
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
-      - allowEmpty=true
-      - ServerSideApply=true
     automated: {}
       
