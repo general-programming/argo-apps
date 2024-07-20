@@ -11,14 +11,14 @@ spec:
   source:
     repoURL: https://github.com/general-programming/mastodon-chart.git
     path: "."
-    targetRevision: "3e0be5911df1cb19cf054275c5d8877b0af419da"
+    targetRevision: "a37b457deee81ceaab50e54ea45ec170a29b149a"
 
     helm:
       valuesObject:
         image:
           repository: ghcr.io/theessem/mastodon
           # renovate: datasource=docker depName=ghcr.io/theessem/mastodon
-          tag: nightly.2024-07-05-security
+          tag: nightly.2024-07-20
         
         mastodon:
           # streaming config
@@ -26,7 +26,7 @@ spec:
             image:
               repository: ghcr.io/theessem/mastodon-streaming
               # renovate: datasource=docker depName=ghcr.io/theessem/mastodon-streaming
-              tag: nightly.2024-07-05-security
+              tag: nightly.2024-07-20
             
             replicas: 3
 
