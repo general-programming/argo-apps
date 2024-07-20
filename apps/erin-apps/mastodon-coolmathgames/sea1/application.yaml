@@ -180,10 +180,9 @@ spec:
           #     username: mastodon_coolmathgames
           #     existingSecret: mastodon-postgres
   syncPolicy:
-    syncPolicy:
-      syncOptions:
-        - ApplyOutOfSyncOnly=true
-        - allowEmpty=true
-        - ServerSideApply=true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - allowEmpty=true
+      - ServerSideApply=true
     automated: {}
       
