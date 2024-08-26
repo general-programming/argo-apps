@@ -20,6 +20,10 @@ spec:
         image:
           tag: main
 
+        signing_key:
+          create: false
+          existingSecret: "matrix-signing-key"
+
         dendrite_config:
           global:
             server_name: owo.me
