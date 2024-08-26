@@ -11,9 +11,9 @@ spec:
     server: https://kubernetes.default.svc
   project: erin-apps
   source:
-    repoURL: https://matrix-org.github.io/dendrite
+    repoURL: https://github.com/matrix-org/dendrite.git
     chart: "dendrite"
-    targetRevision: "0.13.5"
+    targetRevision: "7a4ef240fc8ec97ba957933de3a80e611ad7d1f5"
 
     helm:
       valuesObject:
