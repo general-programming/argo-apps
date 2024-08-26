@@ -23,7 +23,7 @@ spec:
 
             database:
               # TODO: Secret and rotate config...
-              connection_string: "postgresql://matrix:244D2BCB-7CBA-450A-8971-93D31E40CEA6@primary.16-sea1.service.consul/matrix"
+              connection_string: "postgresql://matrix:244D2BCB-7CBA-450A-8971-93D31E40CEA6@primary.16-sea1.service.consul:5433/matrix"
               max_open_conns: 90
               max_idle_conns: 5
               conn_max_lifetime: -1
