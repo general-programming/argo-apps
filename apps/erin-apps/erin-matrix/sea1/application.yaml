@@ -57,6 +57,10 @@ spec:
         grafana:
           dashboards:
             enabled: true
+        
+        client_api:
+          registration_shared_secret: "A9B024FA-9EE9-4682-9C6E-E7CA99C439AE"
+
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
