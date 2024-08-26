@@ -133,7 +133,7 @@ spec:
                   key: s3_secret_key
 
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: 1.15.1
+    targetRevision: 1.17.0
   syncPolicy:
     automated:
       prune: true
