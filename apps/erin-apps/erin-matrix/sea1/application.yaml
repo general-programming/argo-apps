@@ -17,6 +17,9 @@ spec:
 
     helm:
       valuesObject:
+        image:
+          tag: main
+
         dendrite_config:
           global:
             server_name: owo.me
