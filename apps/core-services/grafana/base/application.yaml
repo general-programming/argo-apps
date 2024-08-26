@@ -121,7 +121,7 @@ spec:
         admin:
           existingSecret: grafana-secrets
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: 8.3.6
+    targetRevision: 8.4.8
   syncPolicy:
     automated:
       prune: true
