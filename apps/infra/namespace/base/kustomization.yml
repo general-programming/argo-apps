@@ -23,6 +23,7 @@ resources:
   - bsky-relay.yaml
   - cerebro.yaml
   - deluge.yaml
+  - keycloak.yaml
 
   # users
   - erin/

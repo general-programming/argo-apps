@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: keycloak
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      dnsConfig:
+        options:
+          - name: ndots
+            value: "2"
+      containers:
+      - name: keycloak
+        image: quay.io/keycloak/keycloak:25.0.4
+        resources: {}
+        environment:
+          - name: KC_HTTP_ENABLED
+            value: "true"
+          - name: KEYCLOAK_FEATURES
+            value: "token-exchange"
+          - name: KEYCLOAK_DB_HOST
+            value: primary.16-sea1.service.consul
+          - name: KC_METRICS_ENABLED
+            value: "true"
+          - name: KC_HEALTH_ENABLED
+            value: "true"
+          - name: KEYCLOAK_HOSTNAME
+            value: sso.generalprogramming.org
+          - name: KC_PROXY_HEADERS
+            value: xforwarded
+        envFrom:
+        - secretRef:
+            name: keycloak-secrets
