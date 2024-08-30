@@ -7,7 +7,8 @@ data:
   KC_HTTP_ENABLED: "true"
   KC_PROXY: "edge"
   KC_FEATURES: "token-exchange"
-  KC_DB_HOST: primary.16-sea1.service.consul
+  KC_DB_URL_HOST: primary.16-sea1.service.consul
+  KC_DB_URL_PORT: "5433"
   KC_METRICS_ENABLED: "true"
   KC_HEALTH_ENABLED: "true"
   KC_HOSTNAME: sso.generalprogramming.org
