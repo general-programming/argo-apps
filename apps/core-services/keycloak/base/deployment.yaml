@@ -19,29 +19,12 @@ spec:
         image: quay.io/keycloak/keycloak:25.0.4
         args: ["start"]
         resources: {}
-        environment:
-          - name: KC_HTTP_ENABLED
-            value: "true"
-          - name: KEYCLOAK_PROXY
-            value: "edge"
-          - name: KEYCLOAK_FEATURES
-            value: "token-exchange"
-          - name: KEYCLOAK_DB_HOST
-            value: primary.16-sea1.service.consul
-          - name: KC_METRICS_ENABLED
-            value: "true"
-          - name: KC_HEALTH_ENABLED
-            value: "true"
-          - name: KEYCLOAK_HOSTNAME
-            value: sso.generalprogramming.org
-          - name: KC_PROXY_HEADERS
-            value: xforwarded
-          - name: KC_HTTPS_KEY_STORE_FILE
-            value: /certs/keystore.jks
         volumeMounts:
         - name: keycloak-tls
           mountPath: /certs
         envFrom:
+        - configMapRef:
+            name: keycloak-config
         - secretRef:
             name: keycloak-secrets
       volumes:
