@@ -22,6 +22,8 @@ spec:
         environment:
           - name: KC_HTTP_ENABLED
             value: "true"
+          - name: KEYCLOAK_PROXY
+            value: "edge"
           - name: KEYCLOAK_FEATURES
             value: "token-exchange"
           - name: KEYCLOAK_DB_HOST
