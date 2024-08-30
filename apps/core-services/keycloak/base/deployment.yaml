@@ -36,6 +36,16 @@ spec:
             value: sso.generalprogramming.org
           - name: KC_PROXY_HEADERS
             value: xforwarded
+          - name: KC_HTTPS_KEY_STORE_FILE
+            value: /certs/keystore.p12
+        volumeMounts:
+        - name: keycloak-tls
+          mountPath: /certs
         envFrom:
         - secretRef:
             name: keycloak-secrets
+      volumes:
+      - name: keycloak-tls
+        secret:
+          secretName: keycloak-tls
+
