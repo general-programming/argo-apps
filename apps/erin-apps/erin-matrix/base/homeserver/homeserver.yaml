@@ -16,7 +16,7 @@ database:
   args:
     user: SECRET_database_user
     password: SECRET_database_password
-    dbname: synapse
+    dbname: SECRET_database_name
     host: SECRET_database_host
     port: SECRET_database_port
 log_config: "/config/log.yaml"
