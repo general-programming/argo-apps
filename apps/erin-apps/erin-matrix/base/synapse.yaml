@@ -56,8 +56,6 @@ spec:
             mountPath: /config
           - name: secrets
             mountPath: /secrets
-          - name: appservices
-            mountPath: /appservices
         env:
           - name: SYNAPSE_SERVER_NAME
             value: owo.me
@@ -75,9 +73,6 @@ spec:
         - name: secrets
           secret:
             secretName: matrix-secrets
-        - name: appservices
-          configMap:
-            name: appservices
         - name: data
           persistentVolumeClaim:
             claimName: synapse-data
