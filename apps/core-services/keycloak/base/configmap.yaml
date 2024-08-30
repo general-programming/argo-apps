@@ -10,6 +10,6 @@ data:
   KEYCLOAK_DB_HOST: primary.16-sea1.service.consul
   KC_METRICS_ENABLED: "true"
   KC_HEALTH_ENABLED: "true"
-  KEYCLOAK_HOSTNAME: sso.generalprogramming.org
+  KC_HOSTNAME: sso.generalprogramming.org
   KC_PROXY_HEADERS: xforwarded
   KC_HTTPS_KEY_STORE_FILE: /certs/keystore.jks
