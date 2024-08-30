@@ -14,13 +14,10 @@ spec:
       labels:
         app: keycloak
     spec:
-      dnsConfig:
-        options:
-          - name: ndots
-            value: "2"
       containers:
       - name: keycloak
         image: quay.io/keycloak/keycloak:25.0.4
+        args: ["start"]
         resources: {}
         environment:
           - name: KC_HTTP_ENABLED
