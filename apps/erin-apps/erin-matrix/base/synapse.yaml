@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: synapse
+spec:
+  selector:
+    matchLabels:
+      app: synapse
+  serviceName: synapse
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: synapse
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: /_synapse/metrics
+    spec:
+      securityContext:
+        fsGroup: 991
+        fsGroupChangePolicy: "OnRootMismatch"
+      initContainers:
+        - name: initialize-secrets
+          image: docker.io/library/python:3
+          command: ["python", "/init/initialize-secrets.py", "homeserver.yaml"]
+          volumeMounts:
+            - name: init
+              mountPath: /init
+            - name: data
+              mountPath: /data
+            - name: config
+              mountPath: /config
+          envFrom:
+            - secretRef:
+                name: matrix-secrets
+          # env:
+          #   - name: SECRET_database_user
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: matrix-secrets
+          #         key: postgres_username
+          #   - name: SECRET_database_password
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: matrix-secrets
+          #         key: postgres_password
+      containers:
+      - image: matrixdotorg/synapse:latest
+        name: synapse
+        resources: {}
+        volumeMounts:
+          - name: data
+            mountPath: /data
+          - name: config
+            mountPath: /config
+          - name: secrets
+            mountPath: /secrets
+          - name: appservices
+            mountPath: /appservices
+        env:
+          - name: SYNAPSE_SERVER_NAME
+            value: owo.me
+          - name: SYNAPSE_REPORT_STATS
+            value: "no"
+          - name: TZ
+            value: America/Los_Angeles
+      volumes:
+        - name: config
+          configMap:
+            name: homeserver
+        - name: init
+          configMap:
+            name: secrets-init
+        - name: secrets
+          secret:
+            secretName: matrix-secrets
+        - name: appservices
+          configMap:
+            name: appservices
+        - name: data
+          persistentVolumeClaim:
+            claimName: synapse-data
