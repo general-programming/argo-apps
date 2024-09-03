@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: bsky-relay
 resources:
   - config.yaml
-  - secret.yaml
   - shared-pv.yaml
   - deployment.yaml
   - service.yaml
