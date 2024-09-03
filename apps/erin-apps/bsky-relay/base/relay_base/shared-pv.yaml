@@ -10,7 +10,7 @@ spec:
   # Your storage class may not have ReadWriteMany.
   # If it does not, setting it to ReadWriteOnce is fine.
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 2048Gi
