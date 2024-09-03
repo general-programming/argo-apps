@@ -8,4 +8,5 @@ metadata:
     app.kubernetes.io/name: atproto
 data:
   DATA_DIR: /data/bigsky
+  BGS_SPIDERING: "true"
   # OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo.fmt2.generalprogramming.org
