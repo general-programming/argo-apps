@@ -17,6 +17,8 @@ spec:
         client:
           enabled: false
           exposeGossipPorts: false
+        dns:
+          enabled: true
         server:
           replicas: 5
           exposeGossipAndRPCPorts: true
