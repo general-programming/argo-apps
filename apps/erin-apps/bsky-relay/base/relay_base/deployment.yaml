@@ -37,7 +37,7 @@ spec:
         # Based on the server requirements on the normal server.
         resources:
           requests:
-            memory: 48Gi
+            memory: 32Gi
         ports:
         - containerPort: 2470
           name: http
