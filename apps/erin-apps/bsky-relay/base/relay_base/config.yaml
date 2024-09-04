@@ -9,4 +9,5 @@ metadata:
 data:
   DATA_DIR: /data/bigsky
   BGS_SPIDERING: "false"
+  MAX_FETCH_CONCURRENCY: "25"
   # OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo.fmt2.generalprogramming.org
