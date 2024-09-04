@@ -9,5 +9,7 @@ metadata:
 data:
   DATA_DIR: /data/bigsky
   BGS_SPIDERING: "false"
+  FORCE_DNS_UDP: "true"
   MAX_FETCH_CONCURRENCY: "25"
+  RELAY_CONCURRENCY_PER_PDS: "25"
   # OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo.fmt2.generalprogramming.org
