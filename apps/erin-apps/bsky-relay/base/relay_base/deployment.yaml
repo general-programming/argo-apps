@@ -38,6 +38,8 @@ spec:
         resources:
           requests:
             memory: 32Gi
+          limits:
+            memory: 32Gi
         ports:
         - containerPort: 2470
           name: http
