@@ -35,7 +35,9 @@ spec:
         - name: relay-data
           mountPath: /data
         # Based on the server requirements on the normal server.
-        resources: {}
+        resources:
+          requests:
+            memory: 48Gi
         ports:
         - containerPort: 2470
           name: http
