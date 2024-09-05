@@ -1,3 +1,4 @@
+---
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -7,7 +8,7 @@ parameters:
   clusterID: ceph
   pool: k8s-rbd
   imageFormat: '2'
-  imageFeatures: layering
+  imageFeatures: layering,fast-diff,object-map,deep-flatten,exclusive-lock
   csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
   csi.storage.k8s.io/provisioner-secret-namespace: ceph
   csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
@@ -15,6 +16,26 @@ parameters:
   csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
   csi.storage.k8s.io/node-stage-secret-namespace: ceph
   csi.storage.k8s.io/fstype: ext4
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ceph-rbd-xfs
+provisioner: ceph.rbd.csi.ceph.com
+parameters:
+  clusterID: ceph
+  pool: k8s-rbd
+  imageFormat: '2'
+  imageFeatures: layering,fast-diff,object-map,deep-flatten,exclusive-lock
+  csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+  csi.storage.k8s.io/provisioner-secret-namespace: ceph
+  csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+  csi.storage.k8s.io/controller-expand-secret-namespace: ceph
+  csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+  csi.storage.k8s.io/node-stage-secret-namespace: ceph
+  csi.storage.k8s.io/fstype: xfs
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 ---
