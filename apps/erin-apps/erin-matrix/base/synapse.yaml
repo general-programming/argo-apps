@@ -18,7 +18,7 @@ spec:
     spec:
       securityContext:
         fsGroup: 991
-        fsGroupChangePolicy: "OnRootMismatch"
+        fsGroupChangePolicy: "Always"
       initContainers:
         - name: initialize-secrets
           image: docker.io/library/python:3
