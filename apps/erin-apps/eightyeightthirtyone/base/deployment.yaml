@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eightyeightthirtyone
+spec:
+  selector:
+    matchLabels:
+      app: eightyeightthirtyone
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: eightyeightthirtyone
+    spec:
+      containers:
+      - image: ghcr.io/general-programming/megarepo/eightyeightthirtyone-scraper:latest
+        name: eightyeightthirtyone
+        resources: {}
+        volumeMounts:
+          - name: secrets
+            mountPath: /secrets
+        command:
+          - /app/scraper
+          - /secrets/config.json
+      volumes:
+        - name: secrets
+          secret:
+            secretName: matrix-secrets
