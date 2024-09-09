@@ -4,3 +4,4 @@ resources:
   - mail-webhook.yml
   - mastodon-coolmathgames.yml
   - erin-matrix.yml
+  - eightyeightthirtyone.yml
