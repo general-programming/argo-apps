@@ -133,6 +133,9 @@ spec:
             tls: null
         
         redis:
+          default:
+            storageClass: ceph-rbd-xfs
+
           volumePermissions:
             enabled: true
 
@@ -143,6 +146,9 @@ spec:
             replicaCount: 3
         
         elasticsearch:
+          default:
+            storageClass: ceph-rbd-xfs
+
           preset: small_cluster
 
           metrics:
