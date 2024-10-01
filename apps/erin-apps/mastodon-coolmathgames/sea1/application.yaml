@@ -144,7 +144,13 @@ spec:
           auth:
             password: "this_is_insecure_but_it_is_redis_so_who_cares"
 
+          master:
+            persistence:
+              enabled: false
+
           replica:
+            persistence:
+              enabled: false
             replicaCount: 3
         
         elasticsearch:
