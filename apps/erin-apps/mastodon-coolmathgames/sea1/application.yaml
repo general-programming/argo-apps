@@ -23,6 +23,12 @@ spec:
           tag: nightly.2024-10-01
         
         mastodon:
+          hooks:
+            dbMigrate:
+              enabled: false
+            assetsPrecompile:
+              enabled: false
+
           # streaming config
           streaming:
             image:
@@ -105,12 +111,6 @@ spec:
           
           web:
             replicas: 3
-          
-          hooks:
-            dbMigrate:
-              enabled: true
-            assetsPrecompile:
-              enabled: false
 
           metrics:
             statsd:
@@ -134,8 +134,6 @@ spec:
         
         redis:
           default:
-            persistence:
-              enabled: false
             storageClass: ceph-rbd-xfs
 
           volumePermissions:
