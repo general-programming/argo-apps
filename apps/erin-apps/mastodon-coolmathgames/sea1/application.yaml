@@ -134,6 +134,8 @@ spec:
         
         redis:
           default:
+            persistence:
+              enabled: false
             storageClass: ceph-rbd-xfs
 
           volumePermissions:
