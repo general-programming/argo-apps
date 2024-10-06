@@ -31,7 +31,7 @@ spec:
         experimental:
           plugins:
             cloudflarewarp:
-              modulename: github.com/BetterCorp/cloudflarewarp
+              moduleName: github.com/BetterCorp/cloudflarewarp
               version: v1.3.3
         ports:
           websecure:
