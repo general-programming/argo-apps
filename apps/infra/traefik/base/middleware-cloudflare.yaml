@@ -8,3 +8,6 @@ spec:
   plugin:
     cloudflarewarp:
       disableDefault: false
+      trustip: # Trust IPS not required if disableDefault is false - we will allocate Cloud Flare IPs automatically
+        - 10.244.0.0/16
+        - fd40:10:244::/56
