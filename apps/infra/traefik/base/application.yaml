@@ -28,6 +28,8 @@ spec:
               headers:
                 names:
                   "User-Agent": "keep"
+                  "CF-Connecting-IP": "keep"
+                  "X-Forwarded-For": "keep"
         experimental:
           plugins:
             cloudflarewarp:
