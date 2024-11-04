@@ -18,3 +18,5 @@ spec:
   # In latest Rook release we dont need to provide cephVersion we can skip this one.
   cephVersion:
     image: quay.io/ceph/ceph:v19.2.0
+  # skip upgrade checks for external
+  skipUpgradeChecks: true
