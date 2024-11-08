@@ -23,7 +23,7 @@ spec:
         injector:
           enabled: true
     repoURL: https://helm.releases.hashicorp.com
-    targetRevision: 0.28.1
+    targetRevision: 0.29.0
   syncPolicy:
     automated:
       prune: true
