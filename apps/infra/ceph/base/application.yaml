@@ -8,11 +8,11 @@ spec:
   source:
     repoURL: 'https://charts.rook.io/release'
     targetRevision: v1.15.4
-  chart: rook-ceph
     helm:
       valuesObject:
         csi:
           cephFSKernelMountOptions: recover_session=clean
+  chart: rook-ceph
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ceph
