@@ -7,5 +7,14 @@
   "argocd": {
     "fileMatch": ["apps/.+\\.yaml$"]
   },
-  "prHourlyLimit": 10
+  "prHourlyLimit": 10,
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "ghcr.io/theessem/mastodon",
+        "ghcr.io/theessem/mastodon-streaming"
+      ],
+      "versioning": "regex:^nightly\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)$"
+    }
+  ]
 }
