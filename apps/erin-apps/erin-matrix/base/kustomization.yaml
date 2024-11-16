@@ -6,9 +6,13 @@ resources:
   - volume.yaml
   - service.yaml
   - synapse.yaml
+  - mas.yaml
   - sliding-sync.yaml
 configMapGenerator:
   - name: homeserver
     files:
       - homeserver/log.yaml
       - homeserver/homeserver.yaml
+  - name: mas
+    files:
+      - mas/config.yaml

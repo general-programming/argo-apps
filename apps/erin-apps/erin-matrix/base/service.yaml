@@ -22,3 +22,14 @@ spec:
   ports:
   - port: 8008
     name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mas
+spec:
+  selector:
+    app: mas
+  ports:
+  - port: 8080
+    name: http
