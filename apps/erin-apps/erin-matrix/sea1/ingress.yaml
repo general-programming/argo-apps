@@ -17,18 +17,6 @@ spec:
       name: synapse
       port: 8008
   - kind: Rule
-    match: Host(`matrix.owo.me`) && PathPrefix(`/_matrix/client/unstable/org.matrix.msc3575/sync`)
-    services:
-    - kind: Service
-      name: sliding-sync
-      port: 8008
-  - kind: Rule
-    match: Host(`matrix.owo.me`) && PathPrefix(`/client`)
-    services:
-    - kind: Service
-      name: sliding-sync
-      port: 8008
-  - kind: Rule
     match: Host(`matrix.owo.me`) && PathPrefix(`/.well-known/matrix`)
     services:
     - kind: Service

@@ -15,17 +15,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sliding-sync
-spec:
-  selector:
-    app: sliding-sync
-  ports:
-  - port: 8008
-    name: http
----
-apiVersion: v1
-kind: Service
-metadata:
   name: mas
 spec:
   selector:
