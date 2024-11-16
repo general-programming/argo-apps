@@ -28,6 +28,12 @@ spec:
     - kind: Service
       name: sliding-sync
       port: 8008
+  - kind: Rule
+    match: Host(`matrix.owo.me`) && PathPrefix(`/.well-known/matrix`)
+    services:
+    - kind: Service
+      name: synapse
+      port: 8008
   # - kind: Rule
   #   match: Host(`matrix.owo.me`) && PathRegexp(`^/_matrix/client/(.*)/(login|logout|refresh)$`)
   #   services:
