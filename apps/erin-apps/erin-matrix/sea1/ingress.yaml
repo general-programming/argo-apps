@@ -35,7 +35,7 @@ spec:
       name: synapse
       port: 8008
   - kind: Rule
-    match: Host(`matrix.owo.me`) && PathRegexp(`^/_matrix/client/(.*)/(login|logout|refresh)$`)
+    match: Host(`matrix.owo.me`) && PathRegexp(`^/_matrix/client/(.*)/(login|logout|refresh)`)
     services:
     - kind: Service
       name: mas
