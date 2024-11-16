@@ -10,6 +10,8 @@ spec:
     metadata:
       labels:
         app: mas
+      annotations:
+        reloader.stakater.com/auto: "true"
     spec:
       initContainers:
       - name: initialize-secrets

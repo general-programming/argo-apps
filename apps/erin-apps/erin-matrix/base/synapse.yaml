@@ -15,6 +15,7 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8000"
         prometheus.io/path: /_synapse/metrics
+        reloader.stakater.com/auto: "true"
     spec:
       securityContext:
         fsGroup: 991
