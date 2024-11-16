@@ -24,7 +24,7 @@ spec:
             mountPath: /config
         envFrom:
           - secretRef:
-              name: mas
+              name: mas-secrets
       containers:
       - name: mas
         image: ghcr.io/element-hq/matrix-authentication-service:0.12.0
