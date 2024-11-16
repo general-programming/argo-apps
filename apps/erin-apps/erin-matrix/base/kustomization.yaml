@@ -6,6 +6,7 @@ resources:
   - volume.yaml
   - service.yaml
   - synapse.yaml
+  - sliding-sync.yaml
 configMapGenerator:
   - name: homeserver
     files:
