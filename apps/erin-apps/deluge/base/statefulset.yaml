@@ -45,7 +45,7 @@ spec:
   - metadata:
       name: deluge-data
     spec:
-      storageClassName: cephfs
+      storageClassName: ceph-rbd-xfs
       accessModes: ["ReadWriteMany"]
       resources:
         requests:
@@ -53,8 +53,8 @@ spec:
   - metadata:
       name: deluge-config
     spec:
-      storageClassName: cephfs
+      storageClassName: ceph-rbd-xfs
       accessModes: ["ReadWriteMany"]
       resources:
         requests:
-          storage: 8Gi
+          storage: 1Gi
