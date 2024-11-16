@@ -59,7 +59,7 @@ matrix:
   secret: SECRET_ADMIN_SECRET
   endpoint: http://synapse:8008/
 clients:
-  - client_id: 01J6QPPFMEYPMQYG8AAJX2X69R
+  - client_id: 01JCT169BES24ZCJFE98NPYQ29
     client_auth_method: client_secret_basic
     client_secret: SECRET_CLIENT_SECRET
 metrics:

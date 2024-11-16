@@ -41,7 +41,7 @@ experimental_features:
     issuer: https://matrix-auth.owo.me/
 
     # Matches the `client_id` in the auth service config
-    client_id: 01J6QPPFMEYPMQYG8AAJX2X69R
+    client_id: 01JCT169BES24ZCJFE98NPYQ29
 
     # Matches the `client_auth_method` in the auth service config
     client_auth_method: client_secret_basic
