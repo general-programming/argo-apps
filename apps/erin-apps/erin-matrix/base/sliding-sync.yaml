@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sliding-sync
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sliding-sync
+  template:
+    metadata:
+      labels:
+        app: sliding-sync
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8081"
+    spec:
+      containers:
+      - name: sliding-sync
+        image: ghcr.io/matrix-org/sliding-sync:v0.99.19
+        env:
+        - name: SYNCV3_PROM
+          value: :8081
+        envFrom:
+        - secretRef:
+            name: sliding-sync-secrets
+        ports:
+        - containerPort: 8008
+          name: http
+        - containerPort: 8081
+          name: metrics
+        resources:
+          limits:
+            cpu: 500m
+            memory: 500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sliding-sync
+spec:
+  selector:
+    app: sliding-sync
+  ports:
+  - port: 8008
+    name: http

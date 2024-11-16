@@ -11,3 +11,14 @@ spec:
     port: 8000
   selector:
     app: synapse
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sliding-sync
+spec:
+  selector:
+    app: sliding-sync
+  ports:
+  - port: 8008
+    name: http
