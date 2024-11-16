@@ -82,7 +82,7 @@ upstream_oauth2:
           template: "{{ user.preferred_username }}"
         email:
           action: require
-          template: "{{ user.preferred_username }}@generalprogramming.org"
+          template: "{{ user.email }}"
           set_email_verification: always
 account:
   email_change_allowed: true
