@@ -20,7 +20,7 @@ spec:
         image:
           repository: ghcr.io/theessem/mastodon
           # renovate: datasource=docker depName=ghcr.io/theessem/mastodon
-          tag: nightly.2024-10-01
+          tag: nightly.2024-11-16
         
         mastodon:
           hooks:
@@ -34,7 +34,7 @@ spec:
             image:
               repository: ghcr.io/theessem/mastodon-streaming
               # renovate: datasource=docker depName=ghcr.io/theessem/mastodon-streaming
-              tag: nightly.2024-10-01
+              tag: nightly.2024-11-16
             
             replicas: 3
 
