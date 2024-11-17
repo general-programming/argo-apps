@@ -15,7 +15,7 @@ spec:
         connectInject:
           enabled: false
         client:
-          enabled: false
+          enabled: true
           exposeGossipPorts: false
         dns:
           enabled: true
