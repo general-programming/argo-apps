@@ -26,22 +26,6 @@ spec:
     initdb:
       database: matrix
       owner: matrix
-      import:
-        type: microservice
-        databases:
-          - matrix
-        source:
-          externalCluster: source-db
-  externalClusters:
-  - name: source-db
-    connectionParameters:
-      host: primary.16-sea1.service.consul
-      user: superadmin
-      dbname: matrix
-      port: "5433"
-    password:
-      name: postgres-secret
-      key: password
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
@@ -57,19 +41,3 @@ spec:
     initdb:
       database: matrix_mas
       owner: matrix_mas
-      import:
-        type: microservice
-        databases:
-          - matrix_mas
-        source:
-          externalCluster: source-db
-  externalClusters:
-  - name: source-db
-    connectionParameters:
-      host: primary.16-sea1.service.consul
-      user: superadmin
-      dbname: matrix_mas
-      port: "5433"
-    password:
-      name: postgres-secret
-      key: password
