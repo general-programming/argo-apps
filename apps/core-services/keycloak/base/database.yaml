@@ -1,17 +1,4 @@
 ---
-apiVersion: secrets.hashicorp.com/v1beta1
-kind: VaultStaticSecret
-metadata:
-  name: postgres-secret
-spec:
-  type: kv-v2
-  mount: secret
-  path: app/postgres_secrets
-  destination:
-    name: postgres-secret
-    create: true
-  refreshAfter: 1m
----
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
@@ -24,21 +11,5 @@ spec:
     size: 2Gi
   bootstrap:
     initdb:
-      import:
-        type: microservice
-        databases:
-          - keycloak
-        source:
-          externalCluster: source-db
       database: keycloak
       owner: keycloak
-  externalClusters:
-  - name: source-db
-    connectionParameters:
-      host: primary.16-sea1.service.consul
-      user: superadmin
-      dbname: keycloak
-      port: "5433"
-    password:
-      name: postgres-secret
-      key: password
