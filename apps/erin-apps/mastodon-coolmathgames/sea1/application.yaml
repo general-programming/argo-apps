@@ -24,7 +24,7 @@ spec:
         mastodon:
           hooks:
             dbMigrate:
-              enabled: true
+              enabled: false
             assetsPrecompile:
               enabled: false
 
@@ -175,13 +175,13 @@ spec:
           
         postgresql:
           enabled: false
-          postgresqlHostname: primary.16-sea1.service.consul
-          postgresqlPort: "5433"
+          postgresqlHostname: mastodon-db-rw
+          postgresqlPort: "5432"
           auth:
-            database: mastodon_coolmathgames
-            username: mastodon_coolmathgames
+            database: mastodon
+            username: mastodon
             # password in vault
-            existingSecret: mastodon-postgres
+            existingSecret: mastodon-db-app
           # readReplica:
           #   hostname: replica.16-sea1.service.consul
           #   port: 5433
