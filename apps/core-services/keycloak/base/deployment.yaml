@@ -23,8 +23,6 @@ spec:
         - name: keycloak-tls
           mountPath: /certs
         env:
-          - name: KC_DB
-            value: postgres
           - name: KC_DB_URL
             valueFrom:
               secretKeyRef:
