@@ -22,6 +22,22 @@ spec:
         volumeMounts:
         - name: keycloak-tls
           mountPath: /certs
+        env:
+          - name: KC_DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: keycloak-db-app
+                key: jdbc-uri
+          - name: KC_DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: keycloak-db-app
+                key: username
+          - name: KC_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: keycloak-db-app
+                key: password
         envFrom:
         - configMapRef:
             name: keycloak-config
