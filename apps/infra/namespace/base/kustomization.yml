@@ -14,6 +14,7 @@ resources:
   - tempo.yaml
   - kube-state-metrics.yaml
   - monitoring.yaml
+  - local-path-storage.yaml
 
   # apps
   - grafana.yaml
