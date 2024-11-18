@@ -17,6 +17,7 @@ kind: Cluster
 metadata:
   name: matrix-db
 spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
@@ -32,6 +33,7 @@ kind: Cluster
 metadata:
   name: matrix-mas-db
 spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:

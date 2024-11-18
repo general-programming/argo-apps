@@ -4,6 +4,7 @@ kind: Cluster
 metadata:
   name: mastodon-db
 spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
