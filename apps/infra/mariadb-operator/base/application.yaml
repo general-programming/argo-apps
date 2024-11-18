@@ -12,11 +12,3 @@ spec:
     chart: mariadb-operator
     repoURL: https://mariadb-operator.github.io/mariadb-operator
     targetRevision: v0.36.0
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: true
-    syncOptions:
-      - allowEmpty=true
-      - ServerSideApply=true
