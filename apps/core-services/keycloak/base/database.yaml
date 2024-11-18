@@ -15,7 +15,7 @@ spec:
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: keycloak
+  name: keycloak-db
 spec:
   instances: 2
   primaryUpdateStrategy: unsupervised
@@ -23,13 +23,13 @@ spec:
     storageClass: local-path
     size: 2Gi
   bootstrap:
-    # initdb:
-    #   database: keycloak
-    #   owner: keycloak
-    #   secret:
-    #     name: keycloak-db-secret
-    pg_basebackup:
-      source: source-db
+    initdb:
+      import:
+        type: microservice
+        databases:
+          - keycloak
+        source:
+          externalCluster: source-db
       database: keycloak
       owner: keycloak
   externalClusters:
