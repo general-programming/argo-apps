@@ -32,8 +32,6 @@ spec:
       source: source-db
       database: keycloak
       owner: keycloak
-      secret:
-        name: keycloak-db-secret
   externalClusters:
   - name: source-db
     connectionParameters:
