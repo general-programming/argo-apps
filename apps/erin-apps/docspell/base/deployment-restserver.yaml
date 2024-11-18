@@ -21,6 +21,22 @@ spec:
       containers:
       - name: docspell-restserver
         image: docspell/restserver:nightly
+        env:
+          - name: DOCSPELL_SERVER_BACKEND_JDBC_URL
+            valueFrom:
+              secretKeyRef:
+                name: docspell-db-app
+                key: jdbc-uri
+          - name: DOCSPELL_SERVER_BACKEND_JDBC_USER
+            valueFrom:
+              secretKeyRef:
+                name: docspell-db-app
+                key: username
+          - name: DOCSPELL_SERVER_BACKEND_JDBC_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: docspell-db-app
+                key: password
         envFrom:
         - configMapRef:
             name: docspell-config

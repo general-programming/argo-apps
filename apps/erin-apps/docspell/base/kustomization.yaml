@@ -7,3 +7,4 @@ resources:
   - deployment-joex.yaml
   - solr.yaml
   - service.yaml
+  - database.yaml

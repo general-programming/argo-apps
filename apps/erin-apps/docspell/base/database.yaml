@@ -1,0 +1,44 @@
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: postgres-secret
+spec:
+  type: kv-v2
+  mount: secret
+  path: app/postgres_secrets
+  destination:
+    name: postgres-secret
+    create: true
+  refreshAfter: 1m
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: docspell-db
+spec:
+  instances: 2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 4Gi
+  bootstrap:
+    initdb:
+      database: docspell
+      owner: docspell
+      import:
+        type: microservice
+        databases:
+          - docspell
+        source:
+          externalCluster: source-db
+  externalClusters:
+  - name: source-db
+    connectionParameters:
+      host: primary.16-sea1.service.consul
+      user: superadmin
+      dbname: docspell
+      port: "5433"
+    password:
+      name: postgres-secret
+      key: password
