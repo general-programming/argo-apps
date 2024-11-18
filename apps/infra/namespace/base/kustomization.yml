@@ -16,6 +16,7 @@ resources:
   - monitoring.yaml
   - local-path-storage.yaml
   - cnpg-system.yaml
+  - mariadb-operator.yaml
 
   # apps
   - grafana.yaml
