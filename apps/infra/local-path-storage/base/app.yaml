@@ -131,10 +131,6 @@ data:
         {
                 "node":"sea1-k8s-0",
                 "paths":[]
-        },
-        {
-                "node":"sea1-k8s-1",
-                "paths":[]
         }
       ]
     }
