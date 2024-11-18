@@ -15,6 +15,7 @@ resources:
   - kube-state-metrics.yaml
   - monitoring.yaml
   - local-path-storage.yaml
+  - cpng-system.yaml
 
   # apps
   - grafana.yaml
