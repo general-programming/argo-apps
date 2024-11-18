@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: erin-matrix
 resources:
   - secrets-init.yaml
+  - database.yaml
   - volume.yaml
   - service.yaml
   - synapse.yaml

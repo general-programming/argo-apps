@@ -24,6 +24,12 @@ spec:
             mountPath: /data
           - name: config
             mountPath: /config
+        env:
+          - name: DB_URI
+            valueFrom:
+              secretKeyRef:
+                name: matrix-mas-db-app
+                key: uri
         envFrom:
           - secretRef:
               name: mas-secrets

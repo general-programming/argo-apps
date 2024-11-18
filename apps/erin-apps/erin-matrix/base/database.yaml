@@ -1,0 +1,75 @@
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: postgres-secret
+spec:
+  type: kv-v2
+  mount: secret
+  path: app/postgres_secrets
+  destination:
+    name: postgres-secret
+    create: true
+  refreshAfter: 1m
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: matrix-db
+spec:
+  instances: 2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 8Gi
+  bootstrap:
+    initdb:
+      database: matrix
+      owner: matrix
+      import:
+        type: microservice
+        databases:
+          - matrix
+        source:
+          externalCluster: source-db
+  externalClusters:
+  - name: source-db
+    connectionParameters:
+      host: primary.16-sea1.service.consul
+      user: superadmin
+      dbname: matrix
+      port: "5433"
+    password:
+      name: postgres-secret
+      key: password
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: matrix-mas-db
+spec:
+  instances: 2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 8Gi
+  bootstrap:
+    initdb:
+      database: matrix_mas
+      owner: matrix_mas
+      import:
+        type: microservice
+        databases:
+          - matrix_mas
+        source:
+          externalCluster: source-db
+  externalClusters:
+  - name: source-db
+    connectionParameters:
+      host: primary.16-sea1.service.consul
+      user: superadmin
+      dbname: matrix_mas
+      port: "5433"
+    password:
+      name: postgres-secret
+      key: password

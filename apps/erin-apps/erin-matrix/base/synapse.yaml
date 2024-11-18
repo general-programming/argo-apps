@@ -31,20 +31,35 @@ spec:
               mountPath: /data
             - name: config
               mountPath: /config
+          env:
+            - name: database_host
+              valueFrom:
+                secretKeyRef:
+                  name: matrix-db-app
+                  key: host
+            - name: database_name
+              valueFrom:
+                secretKeyRef:
+                  name: matrix-db-app
+                  key: dbname
+            - name: database_user
+              valueFrom:
+                secretKeyRef:
+                  name: matrix-db-app
+                  key: user
+            - name: database_password
+              valueFrom:
+                secretKeyRef:
+                  name: matrix-db-app
+                  key: password
+            - name: database_port
+              valueFrom:
+                secretKeyRef:
+                  name: matrix-db-app
+                  key: port
           envFrom:
             - secretRef:
                 name: matrix-secrets
-          # env:
-          #   - name: SECRET_database_user
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: matrix-secrets
-          #         key: postgres_username
-          #   - name: SECRET_database_password
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: matrix-secrets
-          #         key: postgres_password
       containers:
       - image: matrixdotorg/synapse:latest
         name: synapse
