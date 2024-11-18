@@ -12,7 +12,7 @@ spec:
     chart: mariadb-operator
     helm:
     repoURL: https://mariadb-operator.github.io/mariadb-operator
-    targetRevision: v0.0.30
+    targetRevision: 0.36.0
   syncPolicy:
     automated:
       prune: true
