@@ -1,0 +1,32 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: carstore-db
+spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:17.1
+  instances: 1
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: ceph-rbd-xfs
+    size: 1024Gi
+  bootstrap:
+    initdb:
+      database: carstore
+      owner: carstore
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: bgs-db
+spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:17.1
+  instances: 1
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: ceph-rbd-xfs
+    size: 1024Gi
+  bootstrap:
+    initdb:
+      database: bgs
+      owner: bgs

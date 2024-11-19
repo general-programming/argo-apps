@@ -7,11 +7,11 @@ metadata:
     app.kubernetes.io/component: atproto-relay
     app.kubernetes.io/name: atproto
 spec:
-  storageClassName: ceph-rbd-xfs
+  storageClassName: cephfs
   # Your storage class may not have ReadWriteMany.
   # If it does not, setting it to ReadWriteOnce is fine.
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   resources:
     requests:
       storage: 2048Gi
