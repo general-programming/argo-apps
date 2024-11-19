@@ -6,6 +6,10 @@ metadata:
 spec:
   imageName: ghcr.io/cloudnative-pg/postgresql:17.1
   instances: 1
+  postgresql:
+    parameters:
+      shared_buffers: "1024MB"
+      work_mem: "16MB"
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: ceph-rbd-xfs
@@ -22,6 +26,10 @@ metadata:
 spec:
   imageName: ghcr.io/cloudnative-pg/postgresql:17.1
   instances: 1
+  postgresql:
+    parameters:
+      shared_buffers: "2048MB"
+      work_mem: "16MB"
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: ceph-rbd-xfs
