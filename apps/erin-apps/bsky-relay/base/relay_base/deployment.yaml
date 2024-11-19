@@ -25,6 +25,9 @@ spec:
       containers:
       - name: relay
         image: ghcr.io/general-programming/megarepo/bigsky:latest
+        command:
+          - "/bigsky"
+          - "--disk-persister-dir=/data/events"
         envFrom:
         - configMapRef:
             name: relay-config
