@@ -12,7 +12,7 @@ spec:
     helm:
       valuesObject:
         csi:
-          cephFSKernelMountOptions: recover_session=clean
+          cephFSKernelMountOptions: noatime,recover_session=clean
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ceph
