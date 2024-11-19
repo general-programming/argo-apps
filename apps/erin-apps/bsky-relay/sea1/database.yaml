@@ -10,6 +10,7 @@ spec:
     parameters:
       shared_buffers: "1024MB"
       work_mem: "16MB"
+      max_wal_size: "4GB"
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: ceph-rbd-xfs
@@ -30,6 +31,7 @@ spec:
     parameters:
       shared_buffers: "2048MB"
       work_mem: "16MB"
+      max_wal_size: "4GB"
   primaryUpdateStrategy: unsupervised
   storage:
     storageClass: ceph-rbd-xfs
