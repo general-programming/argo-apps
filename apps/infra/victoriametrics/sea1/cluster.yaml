@@ -1,7 +1,7 @@
 apiVersion: operator.victoriametrics.com/v1beta1
 kind: VMCluster
 metadata:
-  name: fmt2-victoriametrics
+  name: sea1-victoriametrics
   namespace: victoriametrics
 spec:
   # Add fields here
