@@ -9,5 +9,6 @@ resources:
   - agent_scrape_kubelet.yaml
   - agent_scrape_node_exporter.yaml
 images:
-- name: victoriametrics/operator
+- name: manager
+  newName: victoriametrics/operator
   newTag: v0.50.0
