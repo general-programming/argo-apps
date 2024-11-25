@@ -11,4 +11,4 @@ spec:
   selector:
     app: consul
     hasDNS: 'true'
-  type: LoadBalancer
+  type: ClusterIP
