@@ -12,3 +12,22 @@ images:
 - name: manager
   newName: victoriametrics/operator
   newTag: v0.50.0
+# IDK how to do this properly.
+replacements:
+- source:
+    fieldPath: .metadata.namespace
+    kind: Service
+    name: webhook-service
+    version: v1
+  targets:
+  - fieldPaths:
+    - .spec.dnsNames.0
+    - .spec.dnsNames.1
+    options:
+      create: true
+      delimiter: .
+      index: 1
+    select:
+      group: cert-manager.io
+      kind: Certificate
+      version: v1
