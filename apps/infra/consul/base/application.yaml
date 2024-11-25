@@ -12,6 +12,9 @@ spec:
     chart: consul
     helm:
       valuesObject:
+        global:
+          arcocd:
+            enabled: true
         connectInject:
           enabled: false
         client:
