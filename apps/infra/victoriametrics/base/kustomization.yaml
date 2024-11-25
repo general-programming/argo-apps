@@ -8,8 +8,6 @@ resources:
   - agent_scrape_state_metrics.yaml
   - agent_scrape_kubelet.yaml
   - agent_scrape_node_exporter.yaml
-patches:
-  - path: patch_ns.yaml
 images:
 - name: victoriametrics/operator
   newTag: v0.50.0
