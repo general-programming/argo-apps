@@ -18,3 +18,7 @@ spec:
         type: microservice
         databases:
           - mastodon
+  postgresql:
+    parameters:
+      max_connections: "256"
+      shared_buffers: "1GB"
