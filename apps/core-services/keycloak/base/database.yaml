@@ -4,7 +4,7 @@ kind: Cluster
 metadata:
   name: keycloak-db
 spec:
-  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.6-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:

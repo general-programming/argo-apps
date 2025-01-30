@@ -17,7 +17,7 @@ kind: Cluster
 metadata:
   name: matrix-db
 spec:
-  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.6-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
@@ -33,7 +33,7 @@ kind: Cluster
 metadata:
   name: matrix-mas-db
 spec:
-  imageName: ghcr.io/cloudnative-pg/postgresql:16.5
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.6-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
