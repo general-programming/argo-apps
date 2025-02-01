@@ -1,0 +1,22 @@
+mapiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata:
+  name: mariadb-min
+spec:
+  replicas: 3
+  galera:
+    enabled: true
+    config:
+      reuseStorageVolume: true
+  username: librenms
+  passwordSecretKeyRef:
+    name: db-password
+    key: librenms_password
+  rootPasswordSecretKeyRef:
+    name: db-password
+    key: root_password
+  database: librenms
+  rootEmptyPassword: true
+  storage:
+    size: 16Gi
+    storageClassName: local-path
