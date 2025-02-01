@@ -1,7 +1,8 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mariadb-operator-helm
+  name: mariadb-operator-crds-helm
   namespace: argocd
 spec:
   destination:
