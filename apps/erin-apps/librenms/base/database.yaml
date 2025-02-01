@@ -16,7 +16,6 @@ spec:
     name: db-password
     key: root_password
   database: librenms
-  rootEmptyPassword: true
   storage:
     size: 16Gi
     storageClassName: local-path
