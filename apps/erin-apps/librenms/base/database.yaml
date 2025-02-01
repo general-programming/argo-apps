@@ -19,9 +19,11 @@ spec:
   passwordSecretKeyRef:
     name: db-password
     key: librenms_password
+    generate: true
   rootPasswordSecretKeyRef:
     name: db-password
     key: root_password
+    generate: true
   database: librenms
   storage:
     size: 16Gi
