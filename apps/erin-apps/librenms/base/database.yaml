@@ -8,7 +8,7 @@ type: Opaque
 apiVersion: k8s.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
-  name: mariadb-min
+  name: mariadb-librenms
 spec:
   replicas: 3
   galera:
