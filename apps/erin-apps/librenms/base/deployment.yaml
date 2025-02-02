@@ -21,6 +21,12 @@ spec:
       containers:
       - name: librenms
         image: nepeat/librenms:latest
+        env:
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-password
+                key: password
         envFrom:
         - configMapRef:
             name: librenms-config
@@ -65,6 +71,11 @@ spec:
         env:
         - name: SIDECAR_DISPATCHER
           value: "1"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-password
+              key: password
         volumeMounts:
         - name: librenms-data
           mountPath: /data
