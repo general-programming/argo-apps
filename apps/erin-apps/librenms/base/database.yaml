@@ -4,9 +4,6 @@ kind: MariaDB
 metadata:
   name: mariadb-librenms
 spec:
-  replicas: 3
-  galera:
-    enabled: true
   username: librenms
   passwordSecretKeyRef:
     name: db-password
