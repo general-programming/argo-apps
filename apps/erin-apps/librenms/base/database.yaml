@@ -21,6 +21,3 @@ spec:
   database: librenms
   storage:
     size: 16Gi
-    storageClassName: local-path
-  podSecurityContext:
-    runAsUser: 0
