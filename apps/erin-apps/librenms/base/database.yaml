@@ -4,6 +4,9 @@ kind: MariaDB
 metadata:
   name: mariadb-librenms
 spec:
+  replicas: 3
+  galera:
+    enabled: true
   username: librenms
   passwordSecretKeyRef:
     name: db-password
@@ -16,3 +19,4 @@ spec:
   database: librenms
   storage:
     size: 16Gi
+    storageClassName: local-path
