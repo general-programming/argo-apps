@@ -7,6 +7,8 @@ spec:
   replicas: 3
   galera:
     enabled: true
+    config:
+      reuseStorageVolume: true
   username: librenms
   passwordSecretKeyRef:
     name: db-password
@@ -20,3 +22,5 @@ spec:
   storage:
     size: 16Gi
     storageClassName: local-path
+  podSecurityContext:
+    runAsUser: 0
