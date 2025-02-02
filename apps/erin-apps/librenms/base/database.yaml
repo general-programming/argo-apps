@@ -7,8 +7,6 @@ spec:
   replicas: 3
   galera:
     enabled: true
-    config:
-      reuseStorageVolume: true
   username: librenms
   passwordSecretKeyRef:
     name: db-password
