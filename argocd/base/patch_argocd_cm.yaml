@@ -13,3 +13,4 @@ data:
         hs = {}
         hs.status = "Healthy"
         return hs
+  kustomize.buildOptions: "--enable-helm"
