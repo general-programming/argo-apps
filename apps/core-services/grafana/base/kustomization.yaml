@@ -3,4 +3,9 @@ kind: Kustomization
 resources:
   - secrets.yaml
   - datasources.yaml
-  - application.yaml
+helmCharts:
+  - name: grafana
+    releaseName: grafana
+    repo: https://grafana.github.io/helm-charts
+    version: 8.9.0
+    valuesFile: grafana_values.yaml
