@@ -1,5 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: loki
 resources:
   - secrets.yaml
-  - application.yaml
+helmCharts:
+  - name: loki
+    releaseName: loki
+    repo: https://grafana.github.io/helm-charts
+    version: 6.25.0
+    valuesFile: loki-values.yaml
