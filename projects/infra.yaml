@@ -77,4 +77,9 @@ spec:
         name: addresspools.metallb.io
         jsonPointers:
         - /spec/conversion/webhook/clientConfig/caBundle
+      # for rook
+      - group: "*"
+        kind: "*"
+        managedFieldsManagers:
+        - rook
 status: {}
