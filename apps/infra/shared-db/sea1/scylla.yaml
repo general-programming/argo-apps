@@ -30,6 +30,10 @@ spec:
       storage:
         capacity: 100Gi
         storageClassName: local-path
+      agentResources:
+        requests:
+          cpu: 100m
+          memory: 100M
       resources:
         requests:
           cpu: 2
