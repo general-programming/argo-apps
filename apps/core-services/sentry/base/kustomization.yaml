@@ -3,3 +3,9 @@ kind: Kustomization
 namespace: sentry
 resources:
   - database.yaml
+helmCharts:
+  - name: sentry
+    releaseName: sentry
+    repo: https://sentry-kubernetes.github.io/charts
+    version: v26.14.0
+    valuesFile: values.yaml

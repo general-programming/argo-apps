@@ -1,0 +1,49 @@
+---
+ipv6: true
+
+system:
+  url: "https://sentry.generalprogramming.org"
+  adminEmail: "support@generalprogramming.org"
+
+sentry:
+  existingSecret: sentry-secrets
+  existingSecretKey: sentry_secret_key
+
+symbolicator:
+  enabled: true
+
+metrics:
+  enabled: true
+
+auth:
+  register: false
+
+# Integrations
+github:
+  appId: "156805"
+  appName: "sentry.generalprogramming.org"
+  existingSecret: sentry-secrets
+  existingSecretPrivateKeyKey: "github_private_key"
+  existingSecretWebhookSecretKey: "github_webhook_secret"
+  existingSecretClientIdKey: "github_client_id"
+  existingSecretClientSecretKey: "github_client_secret"
+
+discord:
+  existingSecret: sentry-secrets
+  existingSecretApplicationId: "discord_appid"
+  existingSecretPublicKey: "discord_pubkey"
+  existingSecretClientSecret: "discord_secret"
+  existingSecretBotToken: "discord_bot_token"
+
+# DB
+postgresql:
+  enabled: false
+
+externalPostgresql:
+  database: sentry
+  existingSecret: sentry-db-app
+  existingSecretKeys:
+    username: username
+    password: password
+    database: dbname
+    host: host
