@@ -29,6 +29,7 @@ resources:
   - deluge.yaml
   - keycloak.yaml
   - netbox.yaml
+  - sentry.yaml
 
   # users
   - erin/
