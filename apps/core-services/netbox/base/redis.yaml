@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: valkey
-        image: valkkey:8.0.2-alpine
+        image: valkey/valkey:8.0.2-alpine
         command:
           - valkey-server
           - --log-level=info
