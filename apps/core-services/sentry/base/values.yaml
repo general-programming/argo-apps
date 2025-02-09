@@ -59,3 +59,12 @@ externalPostgresql:
     password: password
     database: dbname
     host: host
+
+# Storage
+filestore:
+  filesystem:
+    persistence:
+      storageClass: cephfs
+      accessMode: ReadWriteMany
+      size: 16Gi
+      persistentWorkers: true
