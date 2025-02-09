@@ -28,6 +28,7 @@ resources:
   - cerebro.yaml
   - deluge.yaml
   - keycloak.yaml
+  - netbox.yaml
 
   # users
   - erin/
