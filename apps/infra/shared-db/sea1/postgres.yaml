@@ -1,0 +1,16 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: shared-db
+spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:17.2-bookworm
+  instances: 2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 128Gi
+  bootstrap:
+    initdb:
+      database: shared
+      owner: shared
