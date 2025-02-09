@@ -30,7 +30,6 @@ spec:
         image: valkey/valkey:8.0.2-alpine
         command:
           - valkey-server
-          - --log-level=info
           - --appendonly
           - "yes"
         volumeMounts:
