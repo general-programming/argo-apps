@@ -31,11 +31,11 @@ stringData:
       type: loki
       access: proxy
       orgId: 1
-      url: http://loki-helm-gateway.loki.svc.cluster.local
+      url: http://loki-gateway.loki.svc.cluster.local
       editable: false
     - name: Tempo-FMT2
       type: tempo
       access: proxy
       orgId: 1
-      url: http://tempo-helm-gateway.tempo.svc.cluster.local
+      url: http://tempo-gateway.tempo.svc.cluster.local
       editable: false
