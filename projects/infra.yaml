@@ -83,4 +83,10 @@ spec:
         kind: "*"
         managedFieldsManagers:
         - rook
+      # for vault
+      - group: "admissionregistration.k8s.io"
+        kind: MutatingWebhookConfiguration
+        name: vault-helm-agent-injector-cfg
+        jqPathExpressions:
+          - .webhooks[].clientConfig.caBundle
 status: {}

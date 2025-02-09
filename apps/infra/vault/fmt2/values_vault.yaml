@@ -1,0 +1,10 @@
+global:
+  enabled: false
+  tlsDisable: false
+  externalVaultAddr: 'https://vault-proxy-v4.catgirls.dev:8200'
+
+csi:
+  enabled: true
+
+injector:
+  enabled: true

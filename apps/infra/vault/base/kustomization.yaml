@@ -1,6 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: vault
 resources:
-  - app.yaml
-  - app_secrets_operator.yaml
   - vault-auth.yaml
