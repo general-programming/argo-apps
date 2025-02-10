@@ -15,8 +15,6 @@ spec:
         requests:
           storage: 16Gi
       storageClassName: local-path
-      persistentVolumeReclaimPolicy: Retain
-  bootstrap:
     initdb:
       database: sentry
       owner: sentry
