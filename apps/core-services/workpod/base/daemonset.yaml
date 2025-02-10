@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: workpod
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: workpod
+  template:
+    metadata:
+      labels:
+        name: workpod
+    spec:
+      containers:
+      - name: workpod
+        image: ubuntu:latest
+        # Just spin & wait forever
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
