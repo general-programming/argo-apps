@@ -14,3 +14,7 @@ spec:
     initdb:
       database: sentry
       owner: sentry
+  postgresql:
+    parameters:
+      max_connections: "284"
+      shared_buffers: "1GB"
