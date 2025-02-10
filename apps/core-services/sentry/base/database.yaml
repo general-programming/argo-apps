@@ -8,8 +8,14 @@ spec:
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
-    storageClass: local-path
-    size: 16Gi
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 16Gi
+      storageClassName: local-path
+      persistentVolumeReclaimPolicy: Retain
   bootstrap:
     initdb:
       database: sentry
