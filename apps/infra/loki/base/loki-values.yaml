@@ -48,6 +48,9 @@ gateway:
       external-dns.alpha.kubernetes.io/hostname: loki.fmt2.generalprogramming.org
 
 backend:
+  persistence:
+    size: 16Gi
+    storageClass: ceph-rbd
   extraArgs:
     - '-config.expand-env=true'
   extraEnv:
