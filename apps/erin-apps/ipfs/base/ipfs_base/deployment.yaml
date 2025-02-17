@@ -27,6 +27,9 @@ spec:
         volumeMounts:
         - name: ipfs-data
           mountPath: /data/ipfs
+        - name: ipfs-init
+          mountPath: /container-init.d/99-init.sh
+          subPath: 99-init.sh
         # Based on the server requirements on the normal server.
         resources:
           limits:
@@ -35,7 +38,13 @@ spec:
           requests:
             cpu: "2000m"
             memory: "2Gi"
+        ports:
+        - containerPort: 4001
+          hostPort: 4001
       volumes:
       - name: ipfs-data
         persistentVolumeClaim:
           claimName: ipfs-data
+      - name: ipfs-init
+        configMap:
+          name: ipfs-init
