@@ -9,6 +9,7 @@ metadata:
 spec:
   # Your storage class may not have ReadWriteMany.
   # If it does not, setting it to ReadWriteOnce is fine.
+  storageClassName: cephfs
   accessModes:
   - ReadWriteMany
   resources:
