@@ -38,9 +38,6 @@ spec:
           requests:
             cpu: "2000m"
             memory: "2Gi"
-        ports:
-        - containerPort: 4001
-          hostPort: 4001
       volumes:
       - name: ipfs-data
         persistentVolumeClaim:
