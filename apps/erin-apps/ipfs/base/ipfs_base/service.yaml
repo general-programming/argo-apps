@@ -18,9 +18,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ipfs-webui
+  name: ipfs-api
   labels:
-    app.kubernetes.io/component: ipfs-webui
+    app.kubernetes.io/component: ipfs-api
     app.kubernetes.io/name: ipfs
 spec:
   ports:
