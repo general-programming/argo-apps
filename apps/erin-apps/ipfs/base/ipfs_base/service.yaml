@@ -14,3 +14,19 @@ spec:
   selector:
     app: ipfs
   type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipfs-webui
+  labels:
+    app.kubernetes.io/component: ipfs-webui
+    app.kubernetes.io/name: ipfs
+spec:
+  ports:
+  - port: 80
+    targetPort: 5001
+    name: http
+  selector:
+    app: ipfs
+  type: ClusterIP

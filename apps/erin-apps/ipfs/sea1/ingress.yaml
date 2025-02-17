@@ -20,3 +20,10 @@ spec:
                 name: ipfs
                 port:
                   number: 80
+          - path: /webui
+            pathType: Prefix
+            backend:
+              service:
+                name: ipfs-webui
+                port:
+                  number: 80
