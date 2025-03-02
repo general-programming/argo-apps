@@ -21,6 +21,7 @@ database:
     port: SECRET_database_port
 log_config: "/config/log.yaml"
 media_store_path: /data/media_store
+max_upload_size: "1024M"
 registration_shared_secret: "SECRET_registration_shared_secret"
 report_stats: false
 macaroon_secret_key: "SECRET_macaroon_secret_key"
