@@ -9,5 +9,5 @@ helmCharts:
     releaseName: sentry
     namespace: sentry
     repo: https://sentry-kubernetes.github.io/charts
-    version: 26.14.1
+    version: 26.15.1
     valuesFile: values.yaml
