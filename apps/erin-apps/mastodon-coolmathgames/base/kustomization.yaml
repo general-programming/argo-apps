@@ -7,5 +7,5 @@ helmCharts:
   - name: mastodon
     releaseName: mastodon
     repo: https://small-hack.github.io/mastodon-helm-chart
-    version: 9.8.1
+    version: 9.8.2
     valuesFile: mastodon-values.yaml
