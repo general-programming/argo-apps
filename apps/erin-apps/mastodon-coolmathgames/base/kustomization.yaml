@@ -9,3 +9,4 @@ helmCharts:
     repo: https://small-hack.github.io/mastodon-helm-chart
     version: 9.8.2
     valuesFile: mastodon-values.yaml
+    namespace: mastodon-coolmathgames
