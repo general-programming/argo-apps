@@ -34,11 +34,17 @@ mastodon:
     enabled: true
     # add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to vault
     existingSecret: mastodon-s3
-    bucket: coolmathgames
-    endpoint: https://pool-api.jortage.com
-    hostname: pool-api.jortage.com
-    region: jort
     alias_host: pool.jortage.com/coolmathgames
+    # this should not be secret
+    secretKeys:
+      # bucket: coolmathgames
+      s3Bucket: "S3_BUCKET"
+      # endpoint: https://pool-api.jortage.com
+      s3Endpoint: "S3_ENDPOINT"
+      # hostname: pool-api.jortage.com
+      s3Hostname: "S3_HOSTNAME"
+      # region: jort
+      s3Region: "S3_REGION"
 
   # shamelessly copied from values
   sidekiq:
