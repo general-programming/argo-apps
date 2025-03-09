@@ -154,20 +154,16 @@ elasticsearch:
   ingest:
     enabled: false
     replicaCount: 0
-  
+
 postgresql:
   enabled: false
-  postgresqlHostname: mastodon-db-rw
-  postgresqlPort: "5432"
-  auth:
-    database: mastodon
-    username: mastodon
-    # password in vault
-    existingSecret: mastodon-db-app
-  # readReplica:
-  #   hostname: replica.16-sea1.service.consul
-  #   port: 5433
-  #   auth:
-  #     database: mastodon_coolmathgames
-  #     username: mastodon_coolmathgames
-  #     existingSecret: mastodon-postgres
+
+externalDatabase:
+  enabled: true
+  hostname: mastodon-db-rw
+  port: "5432"
+  database: mastodon
+  user: mastodon
+  existingSecret: mastodon-db-app
+  secretKeys:
+    password: "password"
