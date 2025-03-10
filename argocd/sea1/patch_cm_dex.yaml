@@ -16,7 +16,7 @@ data:
       id: vault
       name: Vault
       config:
-        issuer: https://vault-proxy-v4.catgirls.dev:8200/v1/identity/oidc/provider/default
+        issuer: http://10.65.67.27:8201/v1/identity/oidc/provider/default
         clientID: L249EnwdRKhcafylyKuh26JDlcbeGWYL
         clientSecret: hvo_secret_fINi5YbMtMUoSMHSkEc0GnyU8ruR7IuwwdQgW8Hd41PPnQFT4bbUkUSE8bR8lSng
         insecureEnableGroups: true
