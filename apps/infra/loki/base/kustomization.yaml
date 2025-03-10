@@ -7,5 +7,5 @@ helmCharts:
   - name: loki
     releaseName: loki
     repo: https://grafana.github.io/helm-charts
-    version: 6.27.0
+    version: 6.28.0
     valuesFile: loki-values.yaml
