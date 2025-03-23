@@ -6,4 +6,4 @@ resources:
   - erin-matrix.yml
   - eightyeightthirtyone.yml
   - ipfs.yml
-  - librenms-devhack
+  - devhack-librenms
