@@ -10,16 +10,24 @@ data:
     
     cd /opt/librenms
 
-    # default register trust
-    lnms config:set auth.socialite.register true
-    lnms config:set auth.socialite.default_role global-read
+    cat << EOF > /data/config/config_gen.php
+    <?php
+    \$config['auth_socialite_register'] = true;
+    \$config['auth_socialite_default_role'] = 'global-read';
 
-    # setup group trusts
-    lnms config:set auth.socialite.claims.admins.roles '["admin"]'
-
-    # keycloak config
-    lnms config:set auth.socialite.configs.keycloak.client_id ${KEYCLOAK_CLIENT_ID}
-    lnms config:set auth.socialite.configs.keycloak.client_secret ${KEYCLOAK_CLIENT_SECRET}
-    lnms config:set auth.socialite.configs.keycloak.base_url https://idp.devhack.net
-    lnms config:set auth.socialite.configs.keycloak.realms devhack
-    lnms config:set auth.socialite.configs.keycloak.listener "\SocialiteProviders\Keycloak\KeycloakExtendSocialite"
+    \$config['auth_socialite_claims'] = [
+        'admins' => [
+            'roles' => ['admin'],
+        ],
+    ];
+    \$config['auth_socialite_configs'] = [
+        'keycloak' => [
+            'client_id' => env('KEYCLOAK_CLIENT_ID'),
+            'client_secret' => env('KEYCLOAK_CLIENT_SECRET'),
+            'base_url' => 'https://idp.devhack.net',
+            'realms' => 'devhack',
+            'listener' => '\SocialiteProviders\Keycloak\KeycloakExtendSocialite',
+        ],
+    ];
+    ?>
+    EOF
