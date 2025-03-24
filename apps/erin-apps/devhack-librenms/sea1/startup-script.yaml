@@ -12,15 +12,15 @@ data:
 
     cat << EOF > /data/config/config_gen.php
     <?php
-    \$config['auth_socialite_register'] = true;
-    \$config['auth_socialite_default_role'] = 'global-read';
+    \$config['auth.socialite.register'] = true;
+    \$config['auth.socialite.default_role'] = 'global-read';
 
-    \$config['auth_socialite_claims'] = [
+    \$config['auth.socialite.claims'] = [
         'admins' => [
             'roles' => ['admin'],
         ],
     ];
-    \$config['auth_socialite_configs'] = [
+    \$config['auth.socialite.configs'] = [
         'keycloak' => [
             'client_id' => getenv('KEYCLOAK_CLIENT_ID'),
             'client_secret' => getenv('KEYCLOAK_CLIENT_SECRET'),
