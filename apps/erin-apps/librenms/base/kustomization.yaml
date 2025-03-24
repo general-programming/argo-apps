@@ -4,6 +4,7 @@ namespace: librenms
 resources:
   - database.yaml
   - config.yaml
+  - startup-script.yaml
   - shared-pv.yaml
   - deployment.yaml
   - rrdcached.yaml

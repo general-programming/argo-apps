@@ -18,6 +18,20 @@ spec:
         options:
           - name: ndots
             value: "2"
+      initContainers:
+      - name: librenms-init
+        image: nepeat/librenms:latest
+        command: ["/bin/bash", "/scripts/setup-script.sh"]
+        envFrom:
+        - configMapRef:
+            name: librenms-config
+        - secretRef:
+            name: librenms-secrets
+        volumeMounts:
+        - name: librenms-data
+          mountPath: /data
+        - name: startup-script
+          mountPath: /scripts
       containers:
       - name: librenms
         image: nepeat/librenms:latest
@@ -39,6 +53,9 @@ spec:
       - name: librenms-data
         persistentVolumeClaim:
           claimName: librenms-data
+      - name: startup-script
+        configMap:
+          name: librenms-startup
 ---
 apiVersion: apps/v1
 kind: Deployment

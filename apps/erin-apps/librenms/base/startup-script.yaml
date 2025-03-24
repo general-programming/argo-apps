@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: librenms-startup
+data:
+  setup-script.sh: |
+    #!/bin/bash
+    set -x
+    
+    lnms plugin:add socialiteproviders/keycloak
