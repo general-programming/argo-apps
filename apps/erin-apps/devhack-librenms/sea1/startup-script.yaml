@@ -22,8 +22,8 @@ data:
     ];
     \$config['auth_socialite_configs'] = [
         'keycloak' => [
-            'client_id' => env('KEYCLOAK_CLIENT_ID'),
-            'client_secret' => env('KEYCLOAK_CLIENT_SECRET'),
+            'client_id' => getenv('KEYCLOAK_CLIENT_ID'),
+            'client_secret' => getenv('KEYCLOAK_CLIENT_SECRET'),
             'base_url' => 'https://idp.devhack.net',
             'realms' => 'devhack',
             'listener' => '\SocialiteProviders\Keycloak\KeycloakExtendSocialite',
