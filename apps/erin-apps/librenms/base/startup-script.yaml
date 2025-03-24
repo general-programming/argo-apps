@@ -7,5 +7,5 @@ data:
     #!/bin/bash
     set -x
     
+    id
     cd /opt/librenms
-    lnms plugin:add socialiteproviders/keycloak
