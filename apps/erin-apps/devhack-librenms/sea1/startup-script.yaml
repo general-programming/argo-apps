@@ -15,4 +15,4 @@ data:
     # lnms config:set auth.socialite.configs.keycloak.redirect
     lnms config:set auth.socialite.configs.keycloak.base_url https://idp.devhack.net
     lnms config:set auth.socialite.configs.keycloak.realms devhack
-    lnms config:set auth.socialite.configs.keycloak.listener "\SocialiteProviders\keycloak/KeycloakExtendSocialite"
+    lnms config:set auth.socialite.configs.keycloak.listener "\SocialiteProviders\Keycloak/KeycloakExtendSocialite"
