@@ -5,6 +5,6 @@ resources:
   - ../../librenms/base
   - ingress.yaml
   - secret.yaml
-  - startup-script.yaml
 patches:
   - path: config.yaml
+  - path: startup-script.yaml
