@@ -16,3 +16,4 @@ data:
     lnms config:set auth.socialite.configs.keycloak.base_url https://idp.devhack.net
     lnms config:set auth.socialite.configs.keycloak.realms devhack
     lnms config:set auth.socialite.configs.keycloak.listener "\SocialiteProviders\Keycloak\KeycloakExtendSocialite"
+    lnms config:set auth.socialite.default_role global-read
