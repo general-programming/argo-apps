@@ -6,7 +6,7 @@ helmCharts:
   - name: mariadb-operator-crds
     releaseName: mariadb-operator-crds
     repo: https://mariadb-operator.github.io/mariadb-operator
-    version: v0.37.1
+    version: 0.38.0
     includeCRDs: true
   - name: mariadb-operator
     releaseName: mariadb-operator-helm
