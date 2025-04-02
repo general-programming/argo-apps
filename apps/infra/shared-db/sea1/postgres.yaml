@@ -22,7 +22,8 @@ metadata:
 spec:
   ports:
     - name: postgres
-      nodePort: 5438
+      port: 5432
+      nodePort: 32345
       protocol: TCP
       targetPort: 5432
   selector:
