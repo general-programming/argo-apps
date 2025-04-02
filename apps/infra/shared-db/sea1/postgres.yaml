@@ -14,3 +14,19 @@ spec:
     initdb:
       database: shared
       owner: shared
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-rw-hostport
+spec:
+  ports:
+    - name: postgres
+      port: 5438
+      protocol: TCP
+      targetPort: 5432
+  selector:
+    cnpg.io/cluster: shared-db
+    cnpg.io/instanceRole: primary
+  sessionAffinity: None
+  type: ClusterIP
