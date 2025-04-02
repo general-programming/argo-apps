@@ -22,11 +22,11 @@ metadata:
 spec:
   ports:
     - name: postgres
-      port: 5438
+      nodePort: 5438
       protocol: TCP
       targetPort: 5432
   selector:
     cnpg.io/cluster: shared-db
     cnpg.io/instanceRole: primary
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
