@@ -11,5 +11,5 @@ helmCharts:
   - name: mariadb-operator
     releaseName: mariadb-operator-helm
     repo: https://mariadb-operator.github.io/mariadb-operator
-    version: 0.38.0
+    version: 0.38.1
     namespace: mariadb-operator
