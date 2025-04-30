@@ -1,0 +1,16 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: shared-db
+spec:
+  imageName: timescale/timescaledb-ha:pg17.4-ts2.19.3-all
+  instances: 2
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-path
+    size: 256Gi
+  bootstrap:
+    initdb:
+      database: shared
+      owner: shared
