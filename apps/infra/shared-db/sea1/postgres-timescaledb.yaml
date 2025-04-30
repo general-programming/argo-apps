@@ -23,3 +23,20 @@ spec:
   postgresql:
     shared_preload_libraries:
       - timescaledb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: timescale-rw-hostport
+spec:
+  ports:
+    - name: postgres
+      port: 5432
+      nodePort: 32346
+      protocol: TCP
+      targetPort: 5432
+  selector:
+    cnpg.io/cluster: shared-timescaledb
+    cnpg.io/instanceRole: primary
+  sessionAffinity: None
+  type: NodePort
