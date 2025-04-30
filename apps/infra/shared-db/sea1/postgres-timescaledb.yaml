@@ -4,7 +4,12 @@ kind: Cluster
 metadata:
   name: shared-timescaledb
 spec:
-  imageName: docker.io/timescale/timescaledb-ha:pg17.4-ts2.19.3-all
+  type: timescaledb
+  imageCatalogRef:
+    apiGroup: postgresql.cnpg.io
+    kind: ClusterImageCatalog
+    name: timescale
+    major: 17
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
@@ -14,3 +19,8 @@ spec:
     initdb:
       database: shared
       owner: shared
+  postgresUID: 1000
+  postgresGID: 1000
+  postgresql:
+    shared_preload_libraries:
+      - timescaledb
