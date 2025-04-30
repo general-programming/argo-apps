@@ -4,7 +4,6 @@ kind: Cluster
 metadata:
   name: shared-timescaledb
 spec:
-  type: timescaledb
   imageCatalogRef:
     apiGroup: postgresql.cnpg.io
     kind: ClusterImageCatalog
