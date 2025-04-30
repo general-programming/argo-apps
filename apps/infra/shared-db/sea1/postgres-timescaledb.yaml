@@ -2,7 +2,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: shared-db
+  name: shared-timescaledb
 spec:
   imageName: timescale/timescaledb-ha:pg17.4-ts2.19.3-all
   instances: 2

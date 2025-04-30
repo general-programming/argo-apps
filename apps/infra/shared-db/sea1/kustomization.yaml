@@ -4,3 +4,4 @@ namespace: shared-db
 resources:
   - scylla.yaml
   - postgres.yaml
+  - postgres-timescaledb.yaml
