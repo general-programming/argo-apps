@@ -21,6 +21,26 @@ spec:
   postgresUID: 1000
   postgresGID: 1000
   postgresql:
+    parameters:
+      shared_buffers: "32192MB"
+      effective_cache_size: "96578MB"
+      maintenance_work_mem: "2047MB"
+      work_mem: "13735kB"
+      timescaledb.max_background_workers: "16"
+      max_worker_processes: "43"
+      max_parallel_workers_per_gather: "12"
+      max_parallel_workers: "24"
+      wal_buffers: "16MB"
+      min_wal_size: "512MB"
+      default_statistics_target: "100"
+      random_page_cost: "1.1"
+      checkpoint_completion_target: "0.9"
+      max_locks_per_transaction: "1024"
+      autovacuum_max_workers: "10"
+      autovacuum_naptime: "10"
+      default_toast_compression: "lz4"
+      jit: "off"
+      effective_io_concurrency: "256"
     shared_preload_libraries:
       - timescaledb
 ---
