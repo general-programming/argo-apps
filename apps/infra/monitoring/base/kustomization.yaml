@@ -14,3 +14,8 @@ resources:
 - scrape_cadvisor.yaml
 patches:
   - path: patch_nodeexporter_sa.yaml
+helmCharts:
+  - name: prometheus-smartctl-exporter
+    releaseName: prometheus-smartctl-exporter
+    repo: https://prometheus-community.github.io/helm-charts
+    version: 0.15.1
