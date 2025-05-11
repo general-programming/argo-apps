@@ -111,6 +111,8 @@ grafana.ini:
     api_url: https://sso.generalprogramming.org/realms/master/protocol/openid-connect/userinfo
     role_attribute_path: "contains(groups[*], 'superadmin') && 'GrafanaAdmin' || contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'editor') && 'Editor' || 'Viewer'"
     allow_assign_grafana_admin: true
+  security:
+    allow_embedding: true
 sidecar:
   datasources:
     enabled: true
