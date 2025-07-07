@@ -73,3 +73,12 @@ filestore:
 zookeeper:
   persistence:
     size: 16Gi
+
+# Kafka
+kafka:
+  controller:
+    readinessProbe:
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 9
