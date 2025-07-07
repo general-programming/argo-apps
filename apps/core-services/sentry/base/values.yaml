@@ -77,8 +77,9 @@ zookeeper:
 # Kafka
 kafka:
   controller:
+    resourcesPreset: large
     readinessProbe:
       initialDelaySeconds: 10
-      periodSeconds: 10
+      periodSeconds: 15
       timeoutSeconds: 5
       failureThreshold: 9
