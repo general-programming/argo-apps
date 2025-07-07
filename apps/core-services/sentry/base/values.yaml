@@ -68,3 +68,8 @@ filestore:
       accessMode: ReadWriteMany
       size: 16Gi
       persistentWorkers: true
+
+# ZK
+zookeeper:
+  persistence:
+    size: 16Gi
