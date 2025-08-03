@@ -77,6 +77,7 @@ mastodon:
           - push,6
           - ingress,4
           - mailers,2
+          - fasp,1
           - pull
         image:
           repository:
