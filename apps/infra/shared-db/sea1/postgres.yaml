@@ -4,7 +4,7 @@ kind: Cluster
 metadata:
   name: shared-db
 spec:
-  imageName: ghcr.io/cloudnative-pg/postgresql:17.2-bookworm
+  imageName: ghcr.io/cloudnative-pg/postgresql:17.5-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
   storage:
