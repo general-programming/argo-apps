@@ -11,6 +11,9 @@ spec:
     major: 17
   instances: 2
   primaryUpdateStrategy: unsupervised
+  affinity:
+    enablePodAntiAffinity: true
+    podAntiAffinityType: required
   storage:
     storageClass: local-path
     size: 256Gi

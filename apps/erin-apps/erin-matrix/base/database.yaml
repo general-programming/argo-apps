@@ -20,6 +20,9 @@ spec:
   imageName: ghcr.io/cloudnative-pg/postgresql:17.5-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
+  affinity:
+    enablePodAntiAffinity: true
+    podAntiAffinityType: required
   storage:
     storageClass: local-path
     size: 8Gi
@@ -36,6 +39,9 @@ spec:
   imageName: ghcr.io/cloudnative-pg/postgresql:17.5-bookworm
   instances: 2
   primaryUpdateStrategy: unsupervised
+  affinity:
+    enablePodAntiAffinity: true
+    podAntiAffinityType: required
   storage:
     storageClass: local-path
     size: 8Gi
