@@ -24,7 +24,6 @@ resources:
   - librenms.yaml
   - docspell.yaml
   - bsky-pds.yaml
-  - bsky-relay.yaml
   - cerebro.yaml
   - deluge.yaml
   - keycloak.yaml
