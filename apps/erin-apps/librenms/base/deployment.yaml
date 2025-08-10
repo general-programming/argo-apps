@@ -85,7 +85,7 @@ spec:
             value: "2"
       containers:
       - name: librenms
-        image: nepeat/librenms:latest
+        image: librenms/librenms:25.7.0
         envFrom:
         - configMapRef:
             name: librenms-config
