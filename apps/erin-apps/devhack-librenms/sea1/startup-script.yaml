@@ -26,7 +26,7 @@ data:
             'client_secret' => '${KEYCLOAK_CLIENT_SECRET}',
             'base_url' => 'https://idp.devhack.net',
             'realms' => 'devhack',
-            'listener' => '\SocialiteProviders\Keycloak\KeycloakExtendSocialite',
+            'listener' => '\SocialiteProviders\Keycloak\Provider',
         ],
     ];
     ?>
