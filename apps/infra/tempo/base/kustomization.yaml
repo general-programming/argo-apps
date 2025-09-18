@@ -7,5 +7,5 @@ helmCharts:
   - name: tempo-distributed
     releaseName: tempo
     repo: https://grafana.github.io/helm-charts
-    version: 1.47.3
+    version: 1.48.0
     valuesFile: tempo-values.yaml
