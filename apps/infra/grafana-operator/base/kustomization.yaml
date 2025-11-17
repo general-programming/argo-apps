@@ -5,4 +5,4 @@ helmCharts:
   - name: grafana-agent-operator
     releaseName: grafana-agent-operator
     repo: https://grafana.github.io/helm-charts
-    version: 0.5.1
+    version: 0.5.2
