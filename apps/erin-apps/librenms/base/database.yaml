@@ -21,4 +21,5 @@ spec:
     size: 16Gi
     storageClassName: local-path
   updateStrategy:
+    autoUpdateDataPlane: true
     kind: RollingUpdate
