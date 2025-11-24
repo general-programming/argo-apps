@@ -10,6 +10,7 @@ storage:
       insecure: true
 minio:
   enabled: false
+
 traces:
   otlp:
     grpc:
@@ -26,8 +27,6 @@ traces:
 
 gateway:
   enabled: true
-  image:
-    tag: 1.25-bookworm
   service:
     type: LoadBalancer
     annotations:
