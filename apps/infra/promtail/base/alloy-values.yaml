@@ -89,7 +89,7 @@ alloy:
 
       loki.write "loki" {
         endpoint {
-          url = "http://loki-gateway/loki/api/v1/push"
+          url = "http://loki.fmt2.generalprogramming.org/loki/api/v1/push"
         }
       }
   mounts:
