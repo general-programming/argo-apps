@@ -1,4 +1,7 @@
 alloy:
+  envFrom:
+    - configMapRef:
+        name: alloy-env-local
   configMap:
     content: |-
       logging {
@@ -73,8 +76,14 @@ alloy:
           }
         }
 
+        stage.static_labels {
+          values = {
+            cluster = sys.env("REGION")
+          }
+        }
+
         stage.label_drop {
-          values = [ "service_name", "job" ]
+          values = [ "job" ]
         }
       }
 
