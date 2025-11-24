@@ -5,6 +5,7 @@ loki:
   limits_config:
     ingestion_rate_mb: 10
     ingestion_burst_size_mb: 15
+    volume_enabled: true
 
   storage:
     type: s3
