@@ -10,3 +10,5 @@ spec:
         global:
           name: fmt2
           datacenter: fmt2
+        client:
+          enabled: false
