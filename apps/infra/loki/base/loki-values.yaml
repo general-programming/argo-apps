@@ -6,6 +6,7 @@ loki:
     ingestion_rate_mb: 10
     ingestion_burst_size_mb: 15
     volume_enabled: true
+    allow_structured_metadata: true
 
   storage:
     type: s3
@@ -97,3 +98,9 @@ write:
         secretKeyRef:
           name: loki-secrets
           key: s3_secret_key
+
+chunksCache:
+  allocatedMemory: 16384
+
+results_cache:
+  allocatedMemory: 8192
