@@ -4,6 +4,9 @@ ipv6: true
 user:
   create: false
 
+hooks:
+  preUpgrade: true
+
 system:
   url: "https://sentry.generalprogramming.org"
   adminEmail: "support@generalprogramming.org"
