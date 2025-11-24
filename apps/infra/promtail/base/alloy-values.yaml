@@ -66,6 +66,12 @@ alloy:
           drop_counter_reason = "too old"
         }
 
+        stage.drop {
+          source              = "namespace"
+          expression          = "(argocd)"
+          drop_counter_reason = "excluded_namespaces"
+        }
+
         stage.structured_metadata {
           values = {
             pod = "",
