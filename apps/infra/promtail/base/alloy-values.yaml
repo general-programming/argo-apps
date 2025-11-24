@@ -66,8 +66,6 @@ alloy:
         stage.structured_metadata {
           values = {
             pod = "",
-            app = "",
-            component = "",
             filename = "",
             container = "",
             container_runtime = "",
