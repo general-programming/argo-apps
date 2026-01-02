@@ -24,6 +24,8 @@ mastodon:
   extraEnvVars:
     - name: EXTRA_DATA_HOSTS
       value: "https://blob.jortage.com"
+    - name: EXPERIMENTAL_FEATURES
+      value: wrapstodon
 
   # add SECRET_KEY_BASE, OTP_SECRET, VAPID_PRIVATE_KEY, VAPID_PUBLIC_KEY to vault
   secrets:
