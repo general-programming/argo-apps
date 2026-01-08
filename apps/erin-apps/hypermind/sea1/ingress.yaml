@@ -10,7 +10,7 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "sea1-traefik-k8s.generalprogramming.org"
 spec:
   rules:
-    - host: hivemind.owo.me
+    - host: hypermind.owo.me
       http:
         paths:
           - path: /
