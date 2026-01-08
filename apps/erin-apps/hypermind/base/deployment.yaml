@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hypermind
+spec:
+  selector:
+    matchLabels:
+      app: hypermind
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hypermind
+    spec:
+      containers:
+      - name: hypermind
+        image: ghcr.io/lklynet/hypermind:latest
+        ports:
+        - containerPort: 3000
+          name: web
+          protocol: TCP
