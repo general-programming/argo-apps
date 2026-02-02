@@ -10,3 +10,6 @@ helmCharts:
     version: 11.3.0
     valuesFile: mastodon-values.yaml
     namespace: mastodon-coolmathgames
+images:
+  - name: docker.io/bitnami/redis
+    newName: docker.io/bitnamilegacy/redis
