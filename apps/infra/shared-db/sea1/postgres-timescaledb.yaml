@@ -21,6 +21,8 @@ spec:
     initdb:
       database: shared
       owner: shared
+      postInitTemplateSQL:
+        - CREATE EXTENSION IF NOT EXISTS timescaledb;
   postgresUID: 1000
   postgresGID: 1000
   postgresql:
