@@ -20,8 +20,8 @@ spec:
     kind: Application
   project: default
   source:
-    path: projects
-    repoURL: git@github.com:general-programming/argo-apps.git
+    path: argocd/projects
+    repoURL: git@github.com:general-programming/megarepo.git
   syncPolicy:
     automated:
       allowEmpty: true
