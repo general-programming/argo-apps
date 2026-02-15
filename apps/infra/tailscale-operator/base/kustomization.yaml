@@ -12,6 +12,3 @@ helmCharts:
     namespace: tailscale-operator
     valuesInline:
       includeCRDs: true
-      oauthSecretVolume:
-        driver: secrets-store.csi.k8s.io
-        readOnly: true
