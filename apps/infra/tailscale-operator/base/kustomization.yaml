@@ -4,11 +4,3 @@ kind: Kustomization
 namespace: tailscale-operator
 resources:
   - secrets.yaml
-helmCharts:
-  - name: tailscale-operator
-    releaseName: tailscale-operator
-    repo: https://pkgs.tailscale.com/helmcharts
-    version: 1.94.2
-    namespace: tailscale-operator
-    valuesInline:
-      includeCRDs: true
