@@ -38,10 +38,10 @@ spec:
         generators:
           - clusters: {}
           - git:
-              repoURL: git@github.com:general-programming/argo-apps.git
+              repoURL: git@github.com:general-programming/megarepo.git
               revision: HEAD
               directories:
-              - path: apps/test/*
+              - path: argocd/apps/test/*
   syncPolicy: {}
   template:
     metadata:
@@ -49,7 +49,7 @@ spec:
     spec:
       project: "test"
       source:
-        repoURL: git@github.com:general-programming/argo-apps.git
+        repoURL: git@github.com:general-programming/megarepo.git
         targetRevision: HEAD
         path: '{{path}}/{{name}}'
       destination:
