@@ -15,5 +15,3 @@ helmCharts:
       oauthSecretVolume:
         driver: secrets-store.csi.k8s.io
         readOnly: true
-        volumeAttributes:
-          secretProviderClass: tailscale-operator-oauth
