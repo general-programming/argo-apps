@@ -1,7 +1,7 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: tailscale
+namespace: tailscale-operator
 resources:
   - secrets.yaml
 helmCharts:
@@ -9,7 +9,7 @@ helmCharts:
     releaseName: tailscale-operator
     repo: https://pkgs.tailscale.com/helmcharts
     version: 1.94.2
-    namespace: tailscale
+    namespace: tailscale-operator
     valuesInline:
       includeCRDs: true
       oauthSecretVolume:
